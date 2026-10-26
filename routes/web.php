@@ -21,6 +21,7 @@ Route::get('/course_category_details/{id}', [HomeController::class, 'course_cate
 Route::get('/services', [HomeController::class, 'services'])->name('home.services');
 Route::get('/service_details/{id}', [HomeController::class, 'service_details'])->name('home.service_details');
 Route::get('/about_us', [HomeController::class, 'about_us'])->name('home.about_us');
+Route::get('/about', [HomeController::class, 'about_us'])->name('home.about');
 Route::get('/mission', [HomeController::class, 'mission'])->name('home.mission');
 Route::get('/placement_cell', [HomeController::class, 'placement_cell'])->name('home.placement_cell');
 Route::get('/job', [HomeController::class, 'job'])->name('home.job');
@@ -56,12 +57,16 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/profile', [AdminController::class, 'AdminProfile'])->name('admin.profile');
     Route::post('/admin/profile/store', [AdminController::class, 'AdminProfileStore'])->name('admin.profile.store');
     Route::get('/admin/change/password', [AdminController::class, 'AdminChangePassword'])->name('admin.change.password');
+    Route::get('/admin/change_password', [AdminController::class, 'AdminChangePassword'])->name('admin.change_password');
     Route::post('/admin/update/password', [AdminController::class, 'AdminUpdatePassword'])->name('admin.update.password');
 
     // Online Applications
     Route::get('/admin/applications', [AdminController::class, 'view_applications'])->name('admin.applications');
+    Route::get('/admin/view_applications', [AdminController::class, 'view_applications'])->name('admin.view_applications');
     Route::post('/admin/applications/status/{id}', [AdminController::class, 'update_application_status'])->name('admin.applications.status');
+    Route::post('/admin/update_application_status/{id}', [AdminController::class, 'update_application_status'])->name('admin.update_application_status');
     Route::get('/admin/applications/delete/{id}', [AdminController::class, 'delete_application'])->name('admin.applications.delete');
+    Route::get('/admin/delete_application/{id}', [AdminController::class, 'delete_application'])->name('admin.delete_application');
 
     // Category CRUD
     Route::get('/admin/view_category', [CourseController::class, 'view_category'])->name('admin.view_category');
