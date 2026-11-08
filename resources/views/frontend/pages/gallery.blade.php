@@ -1,101 +1,91 @@
 @extends('frontend.layouts.master')
 
-@section('title', 'Photo & Video Gallery | ' . ($setting->site_name ?? 'ATTC'))
+@section('title', 'Photo & Video Gallery | Asia Technical Training Center')
+@section('meta_description', 'Visual gallery of practical workshop sessions, student training, client trade test delegations, and certificate award ceremonies at ATTC.')
 
 @section('content')
-<!-- Page Header -->
-<div class="relative bg-slate-900 py-16 sm:py-20 overflow-hidden border-b border-slate-800">
-    <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/90 to-blue-950/80"></div>
-        <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl"></div>
-    </div>
-    
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-4 tracking-wide uppercase">
-            Visual Highlights
-        </span>
-        <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">Campus & Technical Gallery</h1>
-        <p class="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto">
-            Take a visual tour through our advanced workshop machinery, live practical sessions, employer trade testing delegations, and global deployment departures.
-        </p>
 
+@include('frontend.partials.page_banner', [
+    'title' => 'Campus & Workshop Gallery',
+    'subtitle' => 'Visual highlights of our practical laboratories, foreign client delegations, and overseas departures.',
+    'crumbs' => ['Gallery' => '']
+])
+
+<section class="py-16 bg-white" x-data="{ lightbox: false, imgSrc: '', imgTitle: '' }">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+        
         <!-- Filter Tabs -->
-        <div class="mt-8 flex flex-wrap justify-center gap-2">
+        <div class="flex flex-wrap justify-center gap-2">
             <a href="{{ route('home.gallery', ['type' => 'all']) }}" 
-               class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all {{ ($category == 'all' || empty($category)) ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/25' : 'bg-slate-800/80 text-slate-300 hover:bg-slate-800 hover:text-white border border-slate-700/60' }}">
-                All Photos ({{ \App\Models\Gallery::count() }})
+               class="px-5 py-2 rounded-xl text-xs font-bold transition {{ ($category == 'all' || empty($category)) ? 'bg-[#0284c7] text-white shadow-xs' : 'bg-slate-50 border border-slate-200 text-slate-700 hover:bg-slate-100' }}">
+                All Photos
             </a>
             <a href="{{ route('home.gallery', ['type' => 'general']) }}" 
-               class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all {{ $category == 'general' ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/25' : 'bg-slate-800/80 text-slate-300 hover:bg-slate-800 hover:text-white border border-slate-700/60' }}">
-                General Workshops
+               class="px-5 py-2 rounded-xl text-xs font-bold transition {{ $category == 'general' ? 'bg-[#0284c7] text-white shadow-xs' : 'bg-slate-50 border border-slate-200 text-slate-700 hover:bg-slate-100' }}">
+                Workshop Practical
             </a>
             <a href="{{ route('home.gallery', ['type' => 'placement']) }}" 
-               class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all {{ $category == 'placement' ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/25' : 'bg-slate-800/80 text-slate-300 hover:bg-slate-800 hover:text-white border border-slate-700/60' }}">
+               class="px-5 py-2 rounded-xl text-xs font-bold transition {{ $category == 'placement' ? 'bg-[#0284c7] text-white shadow-xs' : 'bg-slate-50 border border-slate-200 text-slate-700 hover:bg-slate-100' }}">
                 Client Interviews & Testing
             </a>
             <a href="{{ route('home.gallery', ['type' => 'overseas']) }}" 
-               class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all {{ $category == 'overseas' ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/25' : 'bg-slate-800/80 text-slate-300 hover:bg-slate-800 hover:text-white border border-slate-700/60' }}">
-                Overseas Flights & Deployment
+               class="px-5 py-2 rounded-xl text-xs font-bold transition {{ $category == 'overseas' ? 'bg-[#0284c7] text-white shadow-xs' : 'bg-slate-50 border border-slate-200 text-slate-700 hover:bg-slate-100' }}">
+                Overseas Flights & Departure
             </a>
         </div>
-    </div>
-</div>
 
-<!-- Gallery Grid -->
-<section class="py-16 bg-slate-950 min-h-[500px]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        @if($galleries->count() > 0)
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                @foreach($galleries as $item)
-                    <div class="group relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800/80 hover:border-slate-700 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 flex flex-col">
-                        <div class="relative h-56 w-full overflow-hidden bg-slate-950">
-                            @if($item->image && file_exists(public_path($item->image)))
-                                <img src="{{ asset($item->image) }}" alt="{{ $item->title ?? 'Gallery Photo' }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            @else
-                                <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-800 text-slate-600">
-                                    <svg class="w-12 h-12 stroke-[1.2]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                                </div>
-                            @endif
-
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                                <span class="text-xs font-semibold text-emerald-400 bg-emerald-500/20 px-2.5 py-1 rounded-md border border-emerald-500/30">
-                                    {{ ucfirst($item->category ?? 'General') }}
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="p-4 flex-1 flex flex-col justify-between">
-                            <div>
-                                <div class="flex items-center justify-between text-xs text-slate-500 mb-1.5">
-                                    <span class="capitalize">{{ $item->category ?? 'Campus Life' }}</span>
-                                    <span>{{ $item->created_at ? $item->created_at->format('M Y') : 'Recent' }}</span>
-                                </div>
-                                <h3 class="text-sm font-semibold text-white group-hover:text-blue-400 transition-colors line-clamp-2">
-                                    {{ $item->title ?? 'Technical Practical Training Demonstration' }}
-                                </h3>
-                            </div>
+        <!-- Photos Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            @forelse($galleries as $item)
+                <div class="pro-card overflow-hidden group cursor-pointer"
+                     @click="lightbox = true; imgSrc = '{{ $item->image ? asset($item->image) : '' }}'; imgTitle = '{{ addslashes($item->title ?? 'Campus Photo') }}'">
+                    <div class="relative h-56 overflow-hidden bg-slate-100">
+                        <img src="{{ $item->image ? asset($item->image) : 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80' }}" 
+                             alt="{{ $item->title ?? 'Gallery Photo' }}" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80';">
+                        <div class="absolute inset-0 bg-[#07172c]/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                            <span class="w-10 h-10 rounded-full bg-white/90 text-[#0284c7] flex items-center justify-center shadow-lg">
+                                <i class="fa-solid fa-expand text-sm"></i>
+                            </span>
                         </div>
                     </div>
-                @endforeach
-            </div>
-
-            <div class="mt-12">
-                {{ $galleries->links() }}
-            </div>
-        @else
-            <div class="text-center py-20 bg-slate-900/50 rounded-3xl border border-dashed border-slate-800">
-                <div class="w-16 h-16 mx-auto rounded-2xl bg-slate-800 flex items-center justify-center text-slate-500 mb-4">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    <div class="p-3 text-center">
+                        <h4 class="text-xs font-bold text-slate-800 line-clamp-1">{{ $item->title ?? 'Practical Session' }}</h4>
+                    </div>
                 </div>
-                <h3 class="text-lg font-bold text-white">No photos in this category yet</h3>
-                <p class="text-slate-400 text-sm mt-1">Check back soon or explore our general workshop albums.</p>
-                <a href="{{ route('home.gallery', ['type' => 'all']) }}" class="mt-4 inline-block px-5 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold transition-colors">
-                    View All Gallery
-                </a>
-            </div>
-        @endif
+            @empty
+                <div class="col-span-4 text-center py-16 text-slate-500">
+                    <p class="text-sm font-semibold">No photos available in this category.</p>
+                </div>
+            @endforelse
+        </div>
+
+        <div class="mt-8">
+            {{ $galleries->links() }}
+        </div>
 
     </div>
+
+    <!-- Lightbox Modal -->
+    <div x-show="lightbox" 
+         x-transition:enter="transition ease-out duration-200"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition ease-in duration-150"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0"
+         class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4" 
+         @keydown.escape.window="lightbox = false"
+         style="display: none;">
+        <button @click="lightbox = false" class="absolute top-6 right-6 text-white text-3xl hover:text-cyan-400">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-4xl max-h-[85vh] p-2 text-center" @click.outside="lightbox = false">
+            <img :src="imgSrc" class="max-h-[75vh] max-w-full rounded-xl mx-auto shadow-2xl object-contain">
+            <p class="text-white text-sm font-semibold mt-3" x-text="imgTitle"></p>
+        </div>
+    </div>
 </section>
+
 @endsection

@@ -1,304 +1,168 @@
 @extends('frontend.layouts.master')
 
-@section('title', 'ATTC - Asia Technical Training Center | BTEB & BMET Accredited Vocational Institute')
+@section('title', 'Asia Technical Training Center | BTEB Registered Training Organization #50821')
+@section('meta_description', 'Asia Technical Training Center (ATTC) is a premier BTEB registered vocational training institute in Mirpur-1, Dhaka offering certified courses in Electrical, Plumbing, and Civil Construction with overseas employment.')
 
 @section('content')
 
 <!-- =========================================================================
-     HERO SECTION
+     1. HERO SECTION (Required: hero_bg.jpg, Specific Title, Subtitle, Contact Us button)
      ========================================================================= -->
-<section class="relative hero-pattern overflow-hidden pt-12 pb-24 border-b border-slate-800">
-    <!-- Ambient glowing backdrop blobs -->
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-tr from-cyan-600/20 via-blue-600/20 to-indigo-600/10 blur-[130px] pointer-events-none rounded-full"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            <!-- Left Hero Content -->
-            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                <!-- Badges -->
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 shadow-inner">
-                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
-                    <span class="text-xs font-semibold text-slate-300">Govt BTEB & BMET Approved Academy</span>
-                    <span class="text-slate-600">•</span>
-                    <span class="text-xs text-amber-400 font-bold">100% Practical Training</span>
-                </div>
-
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15]">
-                    Empowering Youth with <span class="text-gradient">Global Technical</span> Skills & Careers
-                </h1>
-
-                <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                    Master internationally certified craftsmanship in 6G Pipe Welding, Industrial Substation, PLC Automation, and HVAC. Get certified under ASME, AWS & BTEB standards with guaranteed placement interviews in GCC countries and Japan.
-                </p>
-
-                <!-- Action CTAs -->
-                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-                    <a href="#admissionForm" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold text-sm shadow-xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition transform active:scale-95 flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-file-signature"></i> Apply for Winter Admission
-                    </a>
-                    <a href="{{ route('home.all_course') }}" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 hover:text-white font-semibold text-sm border border-slate-700/80 transition flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-shapes text-cyan-400"></i> Browse All Trades
-                    </a>
-                    <a href="{{ route('home.students') }}" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 font-semibold text-sm border border-amber-500/30 transition flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-certificate"></i> Verify Certificate
-                    </a>
-                </div>
-
-                <!-- Trust Micro-Bar -->
-                <div class="pt-6 border-t border-slate-800/80 grid grid-cols-3 gap-4 text-left max-w-lg mx-auto lg:mx-0">
-                    <div>
-                        <p class="text-2xl font-extrabold text-white font-heading">18,500+</p>
-                        <p class="text-xs text-slate-400 font-medium">Overseas Placed</p>
-                    </div>
-                    <div>
-                        <p class="text-2xl font-extrabold text-cyan-400 font-heading">45+ Trades</p>
-                        <p class="text-xs text-slate-400 font-medium">BTEB Accredited</p>
-                    </div>
-                    <div>
-                        <p class="text-2xl font-extrabold text-amber-400 font-heading">98.4%</p>
-                        <p class="text-xs text-slate-400 font-medium">Client Trade Pass Rate</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Hero Card / Visual -->
-            <div class="lg:col-span-5 relative">
-                <div class="relative rounded-3xl overflow-hidden border border-slate-800 bg-slate-900/80 shadow-2xl p-3">
-                    <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=80" 
-                         alt="ATTC 6G Pipe Welding Workshop" 
-                         class="w-full h-[420px] object-cover rounded-2xl">
-                    
-                    <!-- Floating Overlay Card 1: Live Interview Alert -->
-                    <div class="absolute top-8 left-8 bg-slate-950/90 backdrop-blur-md border border-slate-800 p-3.5 rounded-2xl shadow-xl flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg">
-                            <i class="fa-solid fa-handshake"></i>
-                        </div>
-                        <div>
-                            <p class="text-[11px] font-bold uppercase tracking-wider text-emerald-400">Next Client Interview</p>
-                            <p class="text-xs font-bold text-white">Saudi Aramco Project (120 Welders)</p>
-                        </div>
-                    </div>
-
-                    <!-- Floating Overlay Card 2: Visa Dispatch -->
-                    <div class="absolute bottom-8 right-8 bg-slate-950/90 backdrop-blur-md border border-slate-800 p-3.5 rounded-2xl shadow-xl flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-lg">
-                            <i class="fa-solid fa-plane-departure"></i>
-                        </div>
-                        <div>
-                            <p class="text-[11px] font-bold uppercase tracking-wider text-cyan-400">Weekly Departure</p>
-                            <p class="text-xs font-bold text-white">35 Technicians to Dubai & Qatar</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+<section class="relative min-h-[580px] lg:min-h-[640px] flex items-center text-white overflow-hidden bg-[#07172c]">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+        <img src="{{ asset('upload/hero_bg.jpg') }}" 
+             alt="Asia Technical Training Center Campus and Trainees" 
+             class="w-full h-full object-cover object-center filter brightness-90">
+        <!-- Deep Corporate Navy Gradient Overlay for high text contrast and academic feel -->
+        <div class="absolute inset-0 bg-gradient-to-r from-[#07172c]/95 via-[#07172c]/85 to-[#0b2545]/75"></div>
     </div>
-</section>
 
-<!-- =========================================================================
-     LIVE TICKER / NOTICE BAR
-     ========================================================================= -->
-@if($notices->count() > 0)
-<div class="bg-slate-900 border-b border-slate-800 py-3 px-4">
-    <div class="max-w-7xl mx-auto flex items-center gap-4">
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-bold bg-rose-500/20 text-rose-400 border border-rose-500/30 uppercase tracking-wider shrink-0">
-            <i class="fa-solid fa-bullhorn animate-bounce"></i> Notice
-        </span>
-        <div class="overflow-hidden whitespace-nowrap text-xs text-slate-300">
-            @foreach($notices as $n)
-                <span class="inline-block mr-8">
-                    <span class="text-cyan-400 font-semibold">[{{ $n->date }}]</span> 
-                    <a href="{{ route('home.notice') }}" class="hover:text-white hover:underline">{{ $n->title }}</a>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 w-full">
+        <div class="max-w-3xl space-y-6">
+            
+            <!-- Accreditation Badges -->
+            <div class="flex flex-wrap items-center gap-2.5">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                    <i class="fa-solid fa-certificate text-amber-400"></i> BTEB RTO Code: 50821
                 </span>
-            @endforeach
-        </div>
-        <a href="{{ route('home.notice') }}" class="text-xs font-semibold text-cyan-400 hover:text-cyan-300 shrink-0 ml-auto hidden sm:inline">
-            View All <i class="fa-solid fa-arrow-right text-[10px]"></i>
-        </a>
-    </div>
-</div>
-@endif
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/20 text-cyan-300 border border-sky-500/30">
+                    <i class="fa-solid fa-shield-halved text-cyan-400"></i> Govt. Recognized & BMET Partner
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                    <i class="fa-solid fa-clock-rotate-left text-emerald-400"></i> Est. 1985 (39+ Years)
+                </span>
+            </div>
 
-<!-- =========================================================================
-     FEATURED CATEGORIES
-     ========================================================================= -->
-<section class="py-20 bg-slate-950">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-14">
-            <span class="text-xs font-bold uppercase tracking-wider text-cyan-400 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">Specialized Disciplines</span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3 font-heading">Explore Technical Training Departments</h2>
-            <p class="text-slate-400 text-sm mt-3">From heavy metal fusion to automated robotics, our workshops are equipped with high-precision industrial tooling matching global standards.</p>
-        </div>
+            <!-- Main Heading (Exact as requested) -->
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.15] font-heading">
+                Asia Technical Training Center
+            </h1>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            @foreach($categories as $cat)
-            <a href="{{ route('home.course_category_details', $cat->id) }}" class="group relative rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 p-6 transition duration-300 hover:shadow-2xl hover:shadow-cyan-500/10 flex flex-col justify-between">
-                <div class="flex items-center gap-4">
-                    <div class="w-14 h-14 rounded-2xl bg-slate-800 group-hover:bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-2xl transition duration-300">
-                        @if($cat->id == 1) <i class="fa-solid fa-fire-burner"></i>
-                        @elseif($cat->id == 2) <i class="fa-solid fa-bolt"></i>
-                        @elseif($cat->id == 3) <i class="fa-solid fa-gears"></i>
-                        @elseif($cat->id == 4) <i class="fa-solid fa-shield-halved"></i>
-                        @elseif($cat->id == 5) <i class="fa-solid fa-snowflake"></i>
-                        @else <i class="fa-solid fa-microchip"></i>
-                        @endif
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition font-heading">{{ $cat->name }}</h3>
-                        <p class="text-xs text-slate-400 mt-0.5">{{ $cat->courses_count ?? 0 }} Professional Trades</p>
-                    </div>
+            <!-- Subtitle (Exact as requested) -->
+            <p class="text-lg sm:text-2xl font-bold text-amber-400 font-heading">
+                Registered Training Organization - Bangladesh Technical Education Board (BTEB)
+            </p>
+
+            <p class="text-sm sm:text-base text-slate-200 leading-relaxed max-w-2xl font-normal">
+                Building world-class technical workforce for local and international job markets. Over 39 years of proven excellence in Electrical, Plumbing, and Civil Construction skills with guaranteed overseas job placement.
+            </p>
+
+            <!-- Action Buttons with "Contact Us" Button -->
+            <div class="flex flex-wrap items-center gap-4 pt-3">
+                <a href="{{ route('home.contact') }}" 
+                   class="btn-primary-action px-7 py-3.5 rounded-xl font-bold text-sm flex items-center gap-2 shadow-lg">
+                    <i class="fa-solid fa-envelope"></i> Contact Us
+                </a>
+                <a href="{{ route('home.all_course') }}" 
+                   class="px-7 py-3.5 rounded-xl font-bold text-sm bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-xs transition flex items-center gap-2">
+                    <i class="fa-solid fa-shapes text-cyan-300"></i> Explore Courses
+                </a>
+                <a href="{{ route('home.students') }}" 
+                   class="px-6 py-3.5 rounded-xl font-bold text-sm bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 backdrop-blur-xs transition flex items-center gap-2">
+                    <i class="fa-solid fa-award"></i> Verify Certificate
+                </a>
+            </div>
+
+            <!-- Key Figures -->
+            <div class="pt-8 border-t border-slate-700/60 grid grid-cols-3 gap-6 max-w-lg">
+                <div>
+                    <p class="text-2xl sm:text-3xl font-black text-white font-heading">39+</p>
+                    <p class="text-xs text-slate-300 font-medium">Years of Legacy</p>
                 </div>
-
-                <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-slate-400 group-hover:text-cyan-400">
-                    <span>View Curriculum & Syllabus</span>
-                    <i class="fa-solid fa-arrow-right-long transition transform group-hover:translate-x-1"></i>
+                <div>
+                    <p class="text-2xl sm:text-3xl font-black text-cyan-400 font-heading">18,500+</p>
+                    <p class="text-xs text-slate-300 font-medium">Overseas Placed</p>
                 </div>
-            </a>
-            @endforeach
+                <div>
+                    <p class="text-2xl sm:text-3xl font-black text-amber-400 font-heading">100%</p>
+                    <p class="text-xs text-slate-300 font-medium">Practical Training</p>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
 
 <!-- =========================================================================
-     FEATURED COURSES
+     2. LATEST NEWS & NOTICE TICKER
      ========================================================================= -->
-<section class="py-20 bg-slate-900/60 border-y border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-            <div>
-                <span class="text-xs font-bold uppercase tracking-wider text-cyan-400 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">Certified Qualifications</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3 font-heading">Popular Industrial Courses</h2>
-                <p class="text-slate-400 text-sm mt-2 max-w-2xl">Rigorous practical curriculum taught by senior industrial engineers and certified AWS/ASME master inspectors.</p>
-            </div>
-            <a href="{{ route('home.all_course') }}" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-700 transition flex items-center gap-2 self-start md:self-auto">
-                All 45+ Courses <i class="fa-solid fa-arrow-right text-[10px]"></i>
-            </a>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            @foreach($featuredCourses as $course)
-            <div class="rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden hover:border-slate-700 transition duration-300 flex flex-col group shadow-xl">
-                <!-- Course Image -->
-                <div class="relative h-48 overflow-hidden bg-slate-800">
-                    <img src="{{ $course->image ? (str_starts_with($course->image, 'http') ? $course->image : asset($course->image)) : 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80' }}" 
-                         alt="{{ $course->name }}" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    <div class="absolute top-3 left-3">
-                        <span class="px-2.5 py-1 rounded-lg text-[10px] font-extrabold bg-cyan-500/90 text-slate-950 uppercase tracking-wider shadow">
-                            {{ $course->bteb_level ?? 'NTVQF Certified' }}
-                        </span>
-                    </div>
-                    <div class="absolute bottom-3 right-3">
-                        <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-slate-950/90 text-amber-400 border border-slate-800">
-                            {{ $course->Fee ?? '30,000 BDT' }}
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Course Body -->
-                <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                    <div>
-                        <div class="flex items-center gap-2 text-xs text-slate-400 mb-2">
-                            <span class="flex items-center gap-1"><i class="fa-regular fa-clock text-cyan-400"></i> {{ $course->duration ?? '3 Months' }}</span>
-                            <span>•</span>
-                            <span class="flex items-center gap-1"><i class="fa-solid fa-wrench text-cyan-400"></i> Workshop Practical</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition font-heading">
-                            <a href="{{ route('home.course_details', $course->id) }}">{{ $course->name }}</a>
-                        </h3>
-                        <p class="text-xs text-slate-400 line-clamp-2 mt-2 leading-relaxed">
-                            {{ $course->description ?? 'Industrial hands-on course with foreign trade testing preparation.' }}
-                        </p>
-                    </div>
-
-                    <!-- Syllabus modules preview -->
-                    @if(is_array($course->syllabus) && count($course->syllabus) > 0)
-                    <div class="pt-2 border-t border-slate-800/80">
-                        <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Core Syllabus Highlights:</p>
-                        <ul class="text-[11px] text-slate-300 space-y-1">
-                            @foreach(array_slice($course->syllabus, 0, 2) as $syl)
-                                <li class="flex items-center gap-1.5 truncate">
-                                    <i class="fa-solid fa-check text-cyan-400 text-[9px]"></i> {{ $syl }}
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                    @endif
-
-                    <div class="pt-3 border-t border-slate-800 flex items-center justify-between gap-3">
-                        <a href="{{ route('home.course_details', $course->id) }}" class="text-xs font-bold text-slate-300 hover:text-cyan-400 transition">
-                            Curriculum Details <i class="fa-solid fa-arrow-right text-[10px] ml-1"></i>
-                        </a>
-                        <a href="#admissionForm" class="px-3.5 py-1.5 rounded-lg bg-cyan-500/10 hover:bg-cyan-500 text-cyan-400 hover:text-slate-950 font-bold text-xs border border-cyan-500/30 transition">
-                            Enroll Now
-                        </a>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</section>
+@include('frontend.partials.ticker')
 
 <!-- =========================================================================
-     WHY CHOOSE ATTC - INDUSTRIAL STRENGTH
+     3. LEARN ABOUT US / WELCOME TO ATTC
      ========================================================================= -->
-<section class="py-20 bg-slate-950">
+<section class="py-16 lg:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            <div class="lg:col-span-6 space-y-6">
-                <span class="text-xs font-bold uppercase tracking-wider text-amber-400 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20">Institutional Benchmarks</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-heading leading-tight">
-                    Why Global Employers & Technicians Prefer ATTC
+            <!-- Left Column: Imagery & Milestone Badge -->
+            <div class="lg:col-span-5 relative">
+                <div class="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200">
+                    <img src="{{ asset('upload/hero_bg.jpg') }}" 
+                         alt="Asia Technical Training Center Campus" 
+                         class="w-full h-[400px] object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#07172c]/80 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6 text-white">
+                        <span class="inline-block px-3 py-1 rounded-md text-xs font-bold bg-[#0284c7] mb-2">
+                            RTO Center Code: 50821
+                        </span>
+                        <h4 class="text-lg font-bold">149/9-C, Shah Alibag, Mirpur-1, Dhaka</h4>
+                    </div>
+                </div>
+
+                <!-- 39 Years Floating Badge -->
+                <div class="absolute -bottom-6 -right-4 sm:bottom-6 sm:-right-6 bg-[#07172c] text-white p-5 rounded-2xl shadow-2xl border-2 border-amber-400 flex items-center gap-3">
+                    <div class="text-3xl font-black text-amber-400 font-heading">39+</div>
+                    <div class="text-xs font-bold leading-tight uppercase tracking-wider text-slate-200">
+                        Years Of<br><span class="text-cyan-400">Excellence</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Institutional Profile -->
+            <div class="lg:col-span-7 space-y-5">
+                <div class="section-label">Welcome To ATTC</div>
+                
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-[#07172c] tracking-tight leading-tight">
+                    Empowering Skilled Craftsmen with <span class="text-[#0284c7]">Global Employment</span>
                 </h2>
-                <p class="text-sm text-slate-400 leading-relaxed">
-                    Unlike standard theoretical polytechnics, ATTC simulates actual overseas industrial job environments. Our trainees work with identical consumables, welding gases, transformers, and PLC rigs used in Saudi Aramco, Qatar Gas, and Dubai Metro facilities.
+
+                <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                    <strong>ASIA TECHNICAL TRAINING CENTRE (ATTC)</strong> is a Registered Training Organization (RTO) under the <strong>Bangladesh Technical Education Board (BTEB)</strong>, Center Code <strong>50821</strong>. Founded in <strong>1985</strong> by founder member & owner <strong>Mr. Md. Abdul Malek</strong>, ATTC was established with a clear humanitarian vision: to transform unemployed youth into world-class certified technicians.
                 </p>
 
-                <div class="space-y-4 pt-2">
-                    <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-slate-900 border border-slate-800">
-                        <div class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0 text-sm mt-0.5">
-                            <i class="fa-solid fa-screwdriver-wrench"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-white font-bold text-sm font-heading">Individual 6G Welding & PLC Workstations</h4>
-                            <p class="text-xs text-slate-400 mt-0.5">Every student gets dedicated daily machine hours with Miller, Lincoln Electric, and Siemens equipment.</p>
-                        </div>
-                    </div>
+                <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                    ATTC actively conducts vast activities in Education, Vocational Training, and overseas skill development. Partnering closely with national skills programs including the <strong>ASSET Project</strong> and <strong>NSDA</strong>, we take pride in placing over 18,500 skilled graduates across Saudi Arabia, UAE, Qatar, Kuwait, Japan, and Singapore.
+                </p>
 
-                    <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-slate-900 border border-slate-800">
-                        <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 text-sm mt-0.5">
-                            <i class="fa-solid fa-passport"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-white font-bold text-sm font-heading">Direct Client Trade Testing on Campus</h4>
-                            <p class="text-xs text-slate-400 mt-0.5">Foreign delegation recruitment interviews happen inside our own workshops without third-party middlemen.</p>
-                        </div>
+                <!-- Key Highlights List -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                    <div class="flex items-center gap-2.5 text-sm font-semibold text-slate-800">
+                        <i class="fa-solid fa-circle-check text-[#0284c7]"></i>
+                        <span>BTEB Nationally Certified Syllabus</span>
                     </div>
-
-                    <div class="flex items-start gap-3.5 p-3.5 rounded-xl bg-slate-900 border border-slate-800">
-                        <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 text-sm mt-0.5">
-                            <i class="fa-solid fa-qrcode"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-white font-bold text-sm font-heading">Online QR Certificate Verification System</h4>
-                            <p class="text-xs text-slate-400 mt-0.5">Instant online certificate verification for foreign embassies, BMET attestation, and visa stamping.</p>
-                        </div>
+                    <div class="flex items-center gap-2.5 text-sm font-semibold text-slate-800">
+                        <i class="fa-solid fa-circle-check text-[#0284c7]"></i>
+                        <span>100% Practical Workshop Lab</span>
+                    </div>
+                    <div class="flex items-center gap-2.5 text-sm font-semibold text-slate-800">
+                        <i class="fa-solid fa-circle-check text-[#0284c7]"></i>
+                        <span>Direct Overseas Client Interviews</span>
+                    </div>
+                    <div class="flex items-center gap-2.5 text-sm font-semibold text-slate-800">
+                        <i class="fa-solid fa-circle-check text-[#0284c7]"></i>
+                        <span>Safe Hostel & Dining Facility</span>
                     </div>
                 </div>
-            </div>
 
-            <div class="lg:col-span-6 grid grid-cols-2 gap-4">
-                <div class="space-y-4">
-                    <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="Automation Lab" class="rounded-2xl object-cover h-56 w-full border border-slate-800 shadow-xl">
-                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=600&q=80" alt="Safety Drills" class="rounded-2xl object-cover h-40 w-full border border-slate-800 shadow-xl">
-                </div>
-                <div class="space-y-4 pt-8">
-                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="Electrical Lab" class="rounded-2xl object-cover h-40 w-full border border-slate-800 shadow-xl">
-                    <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=600&q=80" alt="Overseas Project" class="rounded-2xl object-cover h-56 w-full border border-slate-800 shadow-xl">
+                <div class="pt-4 flex items-center gap-4">
+                    <a href="{{ route('home.about_us') }}" class="btn-primary-action px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center gap-2">
+                        <span>About More</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="{{ route('home.mission') }}" class="btn-outline-action px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center gap-2">
+                        <span>Mission & Vision</span>
+                    </a>
                 </div>
             </div>
 
@@ -307,196 +171,556 @@
 </section>
 
 <!-- =========================================================================
-     TECHNICAL SERVICES
+     4. OUR SERVICES (3 Professional Cards)
      ========================================================================= -->
-<section class="py-20 bg-slate-900/60 border-t border-slate-800">
+<section class="py-16 bg-slate-50 border-y border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-14">
-            <span class="text-xs font-bold uppercase tracking-wider text-cyan-400 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">Corporate & Agency Solutions</span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3 font-heading">Trade Testing & Industrial Services</h2>
-            <p class="text-slate-400 text-sm mt-3">We partner with recruiting agencies, engineering contractors, and foreign employers to qualify high-caliber human resources.</p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            @foreach($services as $srv)
-            <div class="rounded-2xl bg-slate-900 border border-slate-800 p-6 flex flex-col justify-between hover:border-cyan-500/40 transition duration-300">
-                <div>
-                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-toolbox"></i>
-                    </div>
-                    <h3 class="text-base font-bold text-white font-heading">{{ $srv->name }}</h3>
-                    <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                        {{ $srv->description }}
-                    </p>
-                </div>
-                <div class="mt-6 pt-4 border-t border-slate-800">
-                    <a href="{{ route('home.service_details', $srv->id) }}" class="text-xs font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5">
-                        Service Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </a>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-
-<!-- =========================================================================
-     OVERSEAS PLACEMENT & RECRUITMENT PARTNERS
-     ========================================================================= -->
-<section class="py-20 bg-slate-950">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="rounded-3xl bg-gradient-to-r from-blue-950 via-slate-900 to-indigo-950 border border-slate-800 p-8 sm:p-12 relative overflow-hidden shadow-2xl">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div class="lg:col-span-8 space-y-4">
-                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 uppercase tracking-wider">Placement Record</span>
-                    <h3 class="text-2xl sm:text-3xl font-extrabold text-white font-heading">
-                        Connecting Skilled Craftsmen to Mega Projects Worldwide
-                    </h3>
-                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl">
-                        Our graduates are actively serving in critical oil refineries, shipyards, metro projects, and high-rise developments in Saudi Arabia, UAE, Qatar, Kuwait, Singapore, and Japan with lucrative remuneration.
-                    </p>
-                    <div class="flex flex-wrap items-center gap-3 pt-2">
-                        <span class="px-3 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-xs font-medium text-slate-300 flex items-center gap-1.5"><i class="fa-solid fa-globe text-cyan-400"></i> Saudi Aramco</span>
-                        <span class="px-3 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-xs font-medium text-slate-300 flex items-center gap-1.5"><i class="fa-solid fa-globe text-cyan-400"></i> Consolidated Contractors (CCC)</span>
-                        <span class="px-3 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-xs font-medium text-slate-300 flex items-center gap-1.5"><i class="fa-solid fa-globe text-cyan-400"></i> Alfanar Projects</span>
-                        <span class="px-3 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-xs font-medium text-slate-300 flex items-center gap-1.5"><i class="fa-solid fa-globe text-cyan-400"></i> Jurong Shipyard SG</span>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-4 flex flex-col gap-3">
-                    <a href="{{ route('home.placement_cell') }}" class="w-full py-3.5 px-6 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-extrabold text-xs text-center shadow-lg transition">
-                        Explore Overseas Placement Cell
-                    </a>
-                    <a href="{{ route('home.job') }}" class="w-full py-3.5 px-6 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs text-center border border-slate-700 transition">
-                        View Active Job Circulars
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- =========================================================================
-     ALUMNI TESTIMONIALS
-     ========================================================================= -->
-<section class="py-20 bg-slate-900/40 border-t border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-14">
-            <span class="text-xs font-bold uppercase tracking-wider text-amber-400 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20">Success Stories</span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3 font-heading">What Our Placed Graduates Say</h2>
-            <p class="text-slate-400 text-sm mt-3">Hear from former students who transformed their technical skills into dignified international careers.</p>
+        
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <div class="section-label">Student Support</div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-[#07172c] mt-2 tracking-tight">
+                Our Institutional Services
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-500 mt-2">
+                Comprehensive academic, residential, and career pathways designed for every trainee's success.
+            </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            @foreach($testimonials as $t)
-            <div class="rounded-2xl bg-slate-900 border border-slate-800 p-6 flex flex-col justify-between shadow-xl">
+            
+            <!-- Service 1: Career Counseling -->
+            <div class="pro-card p-6 flex flex-col justify-between">
                 <div>
-                    <div class="flex items-center gap-1 text-amber-400 text-xs mb-4">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <div class="w-14 h-14 rounded-xl bg-sky-50 text-[#0284c7] flex items-center justify-center text-2xl mb-5 border border-sky-100">
+                        <i class="fa-solid fa-compass-drafting"></i>
                     </div>
-                    <p class="text-xs text-slate-300 italic leading-relaxed">
-                        "{{ $t->quote }}"
+                    <h3 class="text-lg font-bold text-[#07172c] mb-2 font-heading">Career Counseling</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        At Asia Technical Training Center (A.T.T.C), we provide career counseling services to ensure our students are well-prepared for their professional journeys. Career counseling plays a vital role in shaping students' careers by guiding them toward the right path based on their skills, interests, and aspirations.
                     </p>
                 </div>
-
-                <div class="mt-6 pt-4 border-t border-slate-800 flex items-center gap-3">
-                    <img src="{{ $t->image ?? 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80' }}" 
-                         alt="{{ $t->name }}" 
-                         class="w-11 h-11 rounded-full object-cover border border-cyan-500/40">
-                    <div>
-                        <h4 class="text-sm font-bold text-white font-heading">{{ $t->name }}</h4>
-                        <p class="text-[11px] text-cyan-400 font-semibold">{{ $t->trade }}</p>
-                        <p class="text-[10px] text-slate-400">{{ $t->country }} • Salary: {{ $t->salary }}</p>
-                    </div>
+                <div class="pt-5 mt-5 border-t border-slate-100">
+                    <a href="{{ route('home.service_details', 1) }}" class="text-xs font-bold text-[#0284c7] hover:text-[#0369a1] inline-flex items-center gap-1.5 transition">
+                        <span>Learn Details</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
                 </div>
             </div>
-            @endforeach
+
+            <!-- Service 2: Hostel -->
+            <div class="pro-card p-6 flex flex-col justify-between">
+                <div>
+                    <div class="w-14 h-14 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl mb-5 border border-amber-100">
+                        <i class="fa-solid fa-hotel"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#07172c] mb-2 font-heading">Hostel Facility</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Hostel Facility at Asia Technical Training Center (A.T.T.C). Asia Technical Training Center offers accommodation for students coming from distant areas. Our hostel facility is safe, clean, and provides a supportive environment with 24/7 security, disciplined study hours, and hygienic dining.
+                    </p>
+                </div>
+                <div class="pt-5 mt-5 border-t border-slate-100">
+                    <a href="{{ route('home.service_details', 2) }}" class="text-xs font-bold text-[#0284c7] hover:text-[#0369a1] inline-flex items-center gap-1.5 transition">
+                        <span>Learn Details</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Service 3: Job Placement -->
+            <div class="pro-card p-6 flex flex-col justify-between">
+                <div>
+                    <div class="w-14 h-14 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl mb-5 border border-emerald-100">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#07172c] mb-2 font-heading">Job Placement</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        At Asia Technical Training Center (A.T.T.C), we are dedicated to supporting our students' career aspirations through a comprehensive Job Placement program connecting students with top overseas employers and reputable multinational engineering contractors worldwide.
+                    </p>
+                </div>
+                <div class="pt-5 mt-5 border-t border-slate-100">
+                    <a href="{{ route('home.service_details', 3) }}" class="text-xs font-bold text-[#0284c7] hover:text-[#0369a1] inline-flex items-center gap-1.5 transition">
+                        <span>Learn Details</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
 
 <!-- =========================================================================
-     ONLINE ADMISSION APPLICATION FORM
+     5. COURSES WE OFFERED (Professional Course Cards)
      ========================================================================= -->
-<section id="admissionForm" class="py-20 bg-slate-950 border-t border-slate-800">
+<section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+            <div>
+                <div class="section-label">Certified Curriculum</div>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-[#07172c] mt-2 tracking-tight">
+                    Courses We Offered
+                </h2>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1">
+                    Government BTEB recognized trade certifications designed for immediate employment.
+                </p>
+            </div>
+            <a href="{{ route('home.all_course') }}" class="btn-outline-action px-5 py-2.5 rounded-lg text-xs font-bold shrink-0 self-start sm:self-auto flex items-center gap-1.5">
+                <span>View All Courses</span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            @forelse($featuredCourses as $course)
+                <div class="pro-card overflow-hidden flex flex-col justify-between group">
+                    <div>
+                        <!-- Course Image with Duration Badge -->
+                        <div class="relative h-44 overflow-hidden bg-slate-100">
+                            <img src="{{ $course->image ? asset($course->image) : 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80' }}" 
+                                 alt="{{ $course->name }}" 
+                                 class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80';">
+                            <div class="absolute top-3 left-3 bg-[#07172c]/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-md backdrop-blur-xs flex items-center gap-1">
+                                <i class="fa-regular fa-clock text-cyan-400"></i> {{ $course->duration ?? '6 month' }}
+                            </div>
+                            <div class="absolute top-3 right-3 bg-amber-500 text-slate-950 text-[10px] font-extrabold px-2 py-0.5 rounded shadow-xs uppercase">
+                                {{ $course->bteb_level ?? 'NTVQF Level-2' }}
+                            </div>
+                        </div>
+
+                        <!-- Card Body -->
+                        <div class="p-5">
+                            <h3 class="text-base font-bold text-[#07172c] group-hover:text-[#0284c7] transition line-clamp-1 font-heading mb-1.5">
+                                <a href="{{ route('home.course_details', $course->id) }}">{{ $course->name }}</a>
+                            </h3>
+                            <p class="text-xs text-slate-500 line-clamp-2 leading-relaxed mb-4">
+                                {{ $course->description }}
+                            </p>
+                            
+                            <div class="flex items-center justify-between text-xs py-2 border-t border-slate-100">
+                                <span class="text-slate-400">Course Fee:</span>
+                                <span class="font-extrabold text-[#0284c7] text-sm">
+                                    BDT {{ number_format((float)($course->Fee ?? 20000)) }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Footer Actions -->
+                    <div class="p-5 pt-0 grid grid-cols-2 gap-2">
+                        <a href="{{ route('home.course_details', $course->id) }}" class="text-center py-2 text-xs font-bold rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 transition">
+                            Details
+                        </a>
+                        <a href="{{ route('home.contact') }}#admissionForm" class="btn-primary-action text-center py-2 text-xs font-bold rounded-lg">
+                            Registration
+                        </a>
+                    </div>
+                </div>
+            @empty
+                <div class="col-span-4 text-center py-12 text-slate-500">
+                    No courses available currently.
+                </div>
+            @endforelse
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     6. OUR FACULTIES & MANAGEMENT (Must be in CARDS as requested!)
+     ========================================================================= -->
+<section class="py-16 lg:py-20 bg-slate-50 border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <div class="section-label">Leadership & Mentorship</div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-[#07172c] mt-2 tracking-tight">
+                Our Faculties & Management
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-500 mt-2">
+                Experienced engineers, certified instructors, and leaders driving technical craftsmanship since 1985.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            @forelse($members as $member)
+                <!-- Professional Member Card -->
+                <div class="pro-card overflow-hidden group">
+                    <div class="relative h-64 overflow-hidden bg-slate-200">
+                        <img src="{{ $member->image ? asset($member->image) : 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80' }}" 
+                             alt="{{ $member->name }}" 
+                             class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-105"
+                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80';">
+                        
+                        <!-- Top Designation Badge -->
+                        <div class="absolute top-3 left-3 bg-[#07172c]/90 text-amber-400 font-bold text-[11px] px-3 py-1 rounded-md backdrop-blur-xs shadow-sm">
+                            {{ $member->designation }}
+                        </div>
+                    </div>
+
+                    <div class="p-6 text-center space-y-2">
+                        <h3 class="text-lg font-bold text-[#07172c] font-heading group-hover:text-[#0284c7] transition">
+                            {{ $member->name }}
+                        </h3>
+                        <p class="text-xs font-semibold text-[#0284c7]">
+                            {{ $member->department ?? 'Management' }}
+                        </p>
+                        <p class="text-xs text-slate-500">
+                            <i class="fa-solid fa-graduation-cap text-slate-400 mr-1"></i> {{ $member->education ?? 'Engineering Expert' }}
+                        </p>
+
+                        <!-- Social / Contact Links -->
+                        <div class="pt-4 flex items-center justify-center space-x-2 border-t border-slate-100">
+                            <a href="#" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-[#0284c7] hover:text-white text-slate-500 flex items-center justify-center text-xs transition">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-[#0284c7] hover:text-white text-slate-500 flex items-center justify-center text-xs transition">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <a href="mailto:asiatechnicalbd@gmail.com" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-[#0284c7] hover:text-white text-slate-500 flex items-center justify-center text-xs transition">
+                                <i class="fa-solid fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            @empty
+                <div class="col-span-3 text-center py-12 text-slate-500">
+                    Faculty details will be updated soon.
+                </div>
+            @endforelse
+        </div>
+
+        <div class="text-center mt-10">
+            <a href="{{ route('home.teachers') }}" class="btn-outline-action px-6 py-2.5 rounded-lg text-xs font-bold inline-flex items-center gap-2">
+                <span>View All Faculties & Staff</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     7. TESTIMONIAL (Must be a SCROLLER / SLIDER with controls as requested!)
+     ========================================================================= -->
+<section class="py-16 lg:py-20 bg-white" 
+         x-data="{ 
+            activeSlide: 0, 
+            totalSlides: {{ count($testimonials) > 0 ? count($testimonials) : 1 }},
+            timer: null,
+            startAutoplay() {
+                this.timer = setInterval(() => {
+                    this.next();
+                }, 4500);
+            },
+            stopAutoplay() {
+                if (this.timer) clearInterval(this.timer);
+            },
+            next() {
+                this.activeSlide = (this.activeSlide + 1) % this.totalSlides;
+            },
+            prev() {
+                this.activeSlide = (this.activeSlide - 1 + this.totalSlides) % this.totalSlides;
+            }
+         }" 
+         x-init="startAutoplay()"
+         @mouseenter="stopAutoplay()" 
+         @mouseleave="startAutoplay()">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="rounded-3xl bg-slate-900 border border-slate-800 p-8 sm:p-12 shadow-2xl relative">
+        
+        <div class="text-center mb-10">
+            <div class="section-label">Student Success Stories</div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-[#07172c] mt-2 tracking-tight">
+                What Our Students Say
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-500 mt-2">
+                Real feedback from graduates now working abroad and across Bangladesh.
+            </p>
+        </div>
+
+        <!-- Scroller Container -->
+        <div class="relative bg-gradient-to-br from-slate-50 to-sky-50/50 rounded-2xl border border-slate-200 p-8 sm:p-12 shadow-sm min-h-[280px] flex items-center">
             
-            <div class="text-center max-w-xl mx-auto mb-10">
-                <span class="text-xs font-bold uppercase tracking-wider text-cyan-400 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">Winter Batch Registration</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-3 font-heading">Apply for Admission Online</h2>
-                <p class="text-slate-400 text-xs mt-2">Fill out the quick form below. Our admission counselor will call you within 24 hours to confirm your seat and batch timings.</p>
+            <!-- Big Decorative Quote Icon -->
+            <div class="absolute top-6 right-8 text-sky-200 text-6xl pointer-events-none select-none font-serif opacity-60">
+                “
             </div>
 
-            <form action="{{ route('home.apply_admission') }}" method="POST" class="space-y-5">
-                @csrf
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-300 mb-1.5">Applicant Full Name *</label>
-                        <input type="text" name="applicant_name" required placeholder="e.g. Md. Tariqul Islam" 
-                               class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-cyan-500 transition">
-                    </div>
+            <!-- Slides Wrapper -->
+            <div class="w-full">
+                @forelse($testimonials as $idx => $t)
+                    <div x-show="activeSlide === {{ $idx }}" 
+                         x-transition:enter="transition ease-out duration-300"
+                         x-transition:enter-start="opacity-0 translate-x-4"
+                         x-transition:enter-end="opacity-100 translate-x-0"
+                         x-transition:leave="transition ease-in duration-200"
+                         x-transition:leave-start="opacity-100 translate-x-0"
+                         x-transition:leave-end="opacity-0 -translate-x-4"
+                         class="space-y-6">
+                        
+                        <!-- Quote Content -->
+                        <p class="text-sm sm:text-base text-slate-700 italic leading-relaxed">
+                            "{{ $t->quote }}"
+                        </p>
 
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-300 mb-1.5">Mobile Number (WhatsApp) *</label>
-                        <input type="text" name="phone" required placeholder="e.g. 01700-000000" 
-                               class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-cyan-500 transition">
-                    </div>
+                        <!-- Student Details -->
+                        <div class="flex items-center gap-4 pt-4 border-t border-slate-200">
+                            <div class="w-12 h-12 rounded-full bg-[#0284c7] text-white flex items-center justify-center font-bold text-lg shadow-sm">
+                                {{ strtoupper(substr($t->name, 0, 1)) }}
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-[#07172c] font-heading">{{ $t->name }}</h4>
+                                <p class="text-xs font-semibold text-[#0284c7]">{{ $t->trade }}</p>
+                                <p class="text-[11px] text-slate-400">{{ $t->batch }}</p>
+                            </div>
+                        </div>
 
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-300 mb-1.5">Desired Course / Trade *</label>
-                        <select name="course_name" required class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white text-xs focus:outline-none focus:border-cyan-500 transition">
-                            <option value="">Select a Course</option>
-                            @foreach($featuredCourses as $c)
-                                <option value="{{ $c->name }}">{{ $c->name }} ({{ $c->duration }})</option>
-                            @endforeach
-                            <option value="6G TIG & SMAW Pipe Welding">6G TIG & SMAW Pipe Welding</option>
-                            <option value="Industrial Electrical & Substation">Industrial Electrical & Substation</option>
-                            <option value="PLC & SCADA Automation">PLC & SCADA Automation</option>
-                            <option value="Pipe Fabrication & Fitting">Pipe Fabrication & Fitting</option>
-                            <option value="Commercial HVAC & Refrigeration">Commercial HVAC & Refrigeration</option>
-                            <option value="Occupational Health & Safety (OSHA)">Occupational Health & Safety (OSHA)</option>
-                        </select>
                     </div>
-
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-300 mb-1.5">Preferred Class Shift</label>
-                        <select name="shift" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white text-xs focus:outline-none focus:border-cyan-500 transition">
-                            <option value="Morning (08:30 AM - 12:30 PM)">Morning (08:30 AM - 12:30 PM)</option>
-                            <option value="Afternoon (02:00 PM - 06:00 PM)">Afternoon (02:00 PM - 06:00 PM)</option>
-                            <option value="Friday & Saturday Weekend Batch">Friday & Saturday Weekend Batch</option>
-                        </select>
+                @empty
+                    <div class="text-center py-8 text-slate-500">
+                        Testimonials will be added soon.
                     </div>
+                @endforelse
+            </div>
 
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-300 mb-1.5">National ID / Birth Reg Number</label>
-                        <input type="text" name="nid" placeholder="Optional NID number" 
-                               class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-cyan-500 transition">
+            <!-- Prev / Next Controls -->
+            <button @click="prev()" 
+                    class="absolute -left-4 sm:-left-5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border border-slate-200 shadow-md text-slate-700 hover:text-[#0284c7] hover:border-[#0284c7] flex items-center justify-center transition focus:outline-hidden">
+                <i class="fa-solid fa-chevron-left text-xs"></i>
+            </button>
+            <button @click="next()" 
+                    class="absolute -right-4 sm:-right-5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border border-slate-200 shadow-md text-slate-700 hover:text-[#0284c7] hover:border-[#0284c7] flex items-center justify-center transition focus:outline-hidden">
+                <i class="fa-solid fa-chevron-right text-xs"></i>
+            </button>
+
+        </div>
+
+        <!-- Scroller Dot Indicators -->
+        <div class="flex items-center justify-center gap-2 mt-6">
+            @foreach($testimonials as $idx => $t)
+                <button @click="activeSlide = {{ $idx }}" 
+                        class="h-2 rounded-full transition-all duration-300" 
+                        :class="activeSlide === {{ $idx }} ? 'w-8 bg-[#0284c7]' : 'w-2 bg-slate-300 hover:bg-slate-400'"></button>
+            @endforeach
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     8. OVERSEAS PARTNERS (Must scroll infinity & uniform same size logos as requested!)
+     ========================================================================= -->
+<section class="py-16 bg-[#07172c] text-white overflow-hidden border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold bg-sky-500/10 text-cyan-400 border border-sky-500/20 mb-3">
+            <i class="fa-solid fa-earth-americas"></i> Global Employment Network
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Overseas Recruiting Partners & Employers
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400 max-w-2xl mx-auto mt-2">
+            Our certified trainees are recruited by multinational infrastructure conglomerates and government-approved recruiting agencies across the Middle East, Japan, and Southeast Asia.
+        </p>
+    </div>
+
+    <!-- Infinite Scrolling Marquee with Uniform Normalized Logo Boxes -->
+    <div class="relative w-full overflow-hidden py-4">
+        <!-- Edge blur gradients for professional marquee look -->
+        <div class="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#07172c] to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[#07172c] to-transparent z-10 pointer-events-none"></div>
+
+        <div class="animate-infinite-scroll flex items-center gap-6">
+            
+            <!-- Track 1: Partner Logos (Exact Uniform Dimensions) -->
+            @php
+                $partners = [
+                    ['name' => 'Saudi Aramco EPC', 'code' => 'ARAMCO', 'sub' => 'Kingdom of Saudi Arabia', 'icon' => 'fa-industry'],
+                    ['name' => 'Dubai Drydocks World', 'code' => 'DRYDOCKS', 'sub' => 'Dubai, UAE', 'icon' => 'fa-ship'],
+                    ['name' => 'Qatar Energy Contractors', 'code' => 'QATAR ENG', 'sub' => 'Doha, Qatar', 'icon' => 'fa-gas-pump'],
+                    ['name' => 'Sobha Construction LLC', 'code' => 'SOBHA', 'sub' => 'United Arab Emirates', 'icon' => 'fa-building'],
+                    ['name' => 'Habtoor Leighton Group', 'code' => 'HLG GULF', 'sub' => 'GCC Region', 'icon' => 'fa-trowel-bricks'],
+                    ['name' => 'Al Futtaim Engineering', 'code' => 'AL-FUTTAIM', 'sub' => 'Middle East', 'icon' => 'fa-gears'],
+                    ['name' => 'Japan Technical Intern (TITP)', 'code' => 'TITP JAPAN', 'sub' => 'Tokyo, Japan', 'icon' => 'fa-sun'],
+                    ['name' => 'Singapore Marine Shipyard', 'code' => 'SINGAPORE', 'sub' => 'Jurong, Singapore', 'icon' => 'fa-anchor'],
+                ];
+            @endphp
+
+            @foreach($partners as $partner)
+                <div class="w-48 h-24 shrink-0 bg-white rounded-xl shadow-md border border-slate-200 flex flex-col items-center justify-center p-3 text-center transition transform hover:scale-105">
+                    <div class="flex items-center justify-center gap-2 mb-1">
+                        <i class="fa-solid {{ $partner['icon'] }} text-[#0284c7] text-base"></i>
+                        <span class="font-black text-slate-800 text-xs tracking-wider font-heading">{{ $partner['code'] }}</span>
                     </div>
+                    <span class="text-[10px] font-bold text-slate-600 line-clamp-1">{{ $partner['name'] }}</span>
+                    <span class="text-[9px] text-slate-400">{{ $partner['sub'] }}</span>
+                </div>
+            @endforeach
 
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-300 mb-1.5">Hostel Accommodation Needed?</label>
-                        <select name="hostel" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white text-xs focus:outline-none focus:border-cyan-500 transition">
-                            <option value="No">No, I have local stay</option>
-                            <option value="Yes, Hostel Required">Yes, I need ATTC Campus Hostel</option>
-                        </select>
+            <!-- Track 2 (Duplicate for continuous seamless infinite loop) -->
+            @foreach($partners as $partner)
+                <div class="w-48 h-24 shrink-0 bg-white rounded-xl shadow-md border border-slate-200 flex flex-col items-center justify-center p-3 text-center transition transform hover:scale-105">
+                    <div class="flex items-center justify-center gap-2 mb-1">
+                        <i class="fa-solid {{ $partner['icon'] }} text-[#0284c7] text-base"></i>
+                        <span class="font-black text-slate-800 text-xs tracking-wider font-heading">{{ $partner['code'] }}</span>
                     </div>
+                    <span class="text-[10px] font-bold text-slate-600 line-clamp-1">{{ $partner['name'] }}</span>
+                    <span class="text-[9px] text-slate-400">{{ $partner['sub'] }}</span>
+                </div>
+            @endforeach
 
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================================
+     9. EVENTS & LATEST NOTICES
+     ========================================================================= -->
+<section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            
+            <!-- Left: Recent Events (7 cols) -->
+            <div class="lg:col-span-7 space-y-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <div class="section-label">Campus Activities</div>
+                        <h2 class="text-xl sm:text-2xl font-extrabold text-[#07172c] mt-1 font-heading">
+                            Recent Events & Delegations
+                        </h2>
+                    </div>
+                    <a href="{{ route('home.event') }}" class="text-xs font-bold text-[#0284c7] hover:underline">
+                        All Events <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
                 </div>
 
-                <div>
-                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Permanent Address / District</label>
-                    <textarea name="address" rows="2" placeholder="e.g. Comilla Sadar, Comilla" 
-                              class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-cyan-500 transition"></textarea>
+                <div class="space-y-4">
+                    @forelse($events as $event)
+                        <div class="pro-card p-4 sm:p-5 flex flex-col sm:flex-row gap-4 items-center">
+                            <div class="w-full sm:w-36 h-28 rounded-xl overflow-hidden bg-slate-100 shrink-0">
+                                <img src="{{ $event->image ? asset($event->image) : 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80' }}" 
+                                     alt="{{ $event->title }}" 
+                                     class="w-full h-full object-cover"
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80';">
+                            </div>
+                            <div class="flex-grow space-y-1.5 text-center sm:text-left">
+                                <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-sky-50 text-[#0284c7]">
+                                    <i class="fa-regular fa-calendar-days mr-1"></i> {{ $event->date }}
+                                </span>
+                                <h3 class="text-sm font-bold text-[#07172c] line-clamp-2 hover:text-[#0284c7] transition">
+                                    <a href="{{ route('home.event_details', $event->id) }}">{{ $event->title }}</a>
+                                </h3>
+                                <p class="text-xs text-slate-500 line-clamp-2">
+                                    {{ $event->description }}
+                                </p>
+                            </div>
+                        </div>
+                    @empty
+                        <p class="text-xs text-slate-500">No events listed currently.</p>
+                    @endforelse
+                </div>
+            </div>
+
+            <!-- Right: Notice Board (5 cols) -->
+            <div class="lg:col-span-5 space-y-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <div class="section-label">Official Bulletins</div>
+                        <h2 class="text-xl sm:text-2xl font-extrabold text-[#07172c] mt-1 font-heading">
+                            Notice Board
+                        </h2>
+                    </div>
+                    <a href="{{ route('home.notice') }}" class="text-xs font-bold text-[#0284c7] hover:underline">
+                        View All <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
                 </div>
 
-                <div class="pt-2 text-center">
-                    <button type="submit" class="w-full sm:w-auto px-10 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-extrabold text-sm shadow-xl shadow-cyan-500/25 transition transform active:scale-95">
-                        Submit Admission Application <i class="fa-solid fa-paper-plane ml-2"></i>
-                    </button>
+                <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
+                    @forelse($notices as $notice)
+                        <div class="p-3 bg-white rounded-xl border border-slate-100 shadow-2xs hover:border-sky-300 transition">
+                            <div class="flex items-center justify-between gap-2 text-[10px] text-slate-400 mb-1">
+                                <span class="px-2 py-0.5 rounded font-bold bg-amber-50 text-amber-700 border border-amber-200">
+                                    {{ $notice->badge ?? 'Notice' }}
+                                </span>
+                                <span><i class="fa-regular fa-calendar mr-1"></i> {{ $notice->date }}</span>
+                            </div>
+                            <h4 class="text-xs font-bold text-slate-800 line-clamp-2 hover:text-[#0284c7] transition">
+                                <a href="{{ route('home.notice') }}">{{ $notice->title }}</a>
+                            </h4>
+                        </div>
+                    @empty
+                        <p class="text-xs text-slate-500 text-center py-4">No notices published.</p>
+                    @endforelse
                 </div>
-            </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================================
+     10. QUICK ADMISSION APPLICATION / INQUIRY BANNER
+     ========================================================================= -->
+<section id="admissionForm" class="py-16 bg-gradient-to-r from-[#07172c] to-[#0b2545] text-white border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            
+            <div class="lg:col-span-5 space-y-4">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                    <i class="fa-solid fa-user-plus"></i> Admissions Open
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight font-heading">
+                    Apply for New Vocational Trade Batch
+                </h2>
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    Submit your basic contact details online. Our admissions counselor will contact you within 24 hours with class routines, fee assistance, and hostel accommodations.
+                </p>
+                <div class="space-y-2 pt-2 text-xs text-slate-300">
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-cyan-400"></i> Hotline: +880 1681769149, +880 1735066260</p>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-cyan-400"></i> 149/9-C, Shah Alibag, Mirpur-1, Dhaka-1216</p>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7">
+                <form action="{{ route('home.apply_admission') }}" method="POST" class="bg-white text-slate-800 p-6 sm:p-8 rounded-2xl shadow-2xl border border-slate-200">
+                    @csrf
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Applicant Name *</label>
+                            <input type="text" name="applicant_name" required placeholder="Full Name" 
+                                   class="w-full px-3.5 py-2.5 text-xs rounded-lg border border-slate-300 focus:border-[#0284c7] focus:ring-1 focus:ring-[#0284c7] outline-hidden">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Phone Number *</label>
+                            <input type="text" name="phone" required placeholder="017XXXXXXXX" 
+                                   class="w-full px-3.5 py-2.5 text-xs rounded-lg border border-slate-300 focus:border-[#0284c7] focus:ring-1 focus:ring-[#0284c7] outline-hidden">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Select Desired Trade *</label>
+                            <select name="course_name" required class="w-full px-3.5 py-2.5 text-xs rounded-lg border border-slate-300 focus:border-[#0284c7] focus:ring-1 focus:ring-[#0284c7] outline-hidden bg-white">
+                                <option value="Rod Binder (Civil Construction)">Rod Binder (Civil Construction)</option>
+                                <option value="Plumbing & Pipe Fitting">Plumbing & Pipe Fitting</option>
+                                <option value="Basic Electrical">Basic Electrical (House Wiring)</option>
+                                <option value="Electrical & Electronics">Electrical & Electronics</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Preferred Shift</label>
+                            <select name="shift" class="w-full px-3.5 py-2.5 text-xs rounded-lg border border-slate-300 focus:border-[#0284c7] focus:ring-1 focus:ring-[#0284c7] outline-hidden bg-white">
+                                <option value="Morning">Morning Shift</option>
+                                <option value="Evening">Evening Shift</option>
+                                <option value="Friday Special">Friday Special (Working Professionals)</option>
+                            </select>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-xs font-bold text-slate-700 mb-1">District / Present Address</label>
+                            <input type="text" name="address" placeholder="e.g. Mirpur, Dhaka" 
+                                   class="w-full px-3.5 py-2.5 text-xs rounded-lg border border-slate-300 focus:border-[#0284c7] focus:ring-1 focus:ring-[#0284c7] outline-hidden">
+                        </div>
+                    </div>
+
+                    <div class="mt-5">
+                        <button type="submit" class="btn-primary-action w-full py-3 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Submit Application
+                        </button>
+                    </div>
+                </form>
+            </div>
 
         </div>
     </div>

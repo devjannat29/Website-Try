@@ -260,6 +260,18 @@ class HomeController extends Controller
     }
 
     /**
+     * Single Event Details Page
+     */
+    public function event_details($id)
+    {
+        $setting = Setting::first();
+        $event = Event::findOrFail($id);
+        $recentEvents = Event::where('id', '!=', $id)->take(3)->get();
+
+        return view('frontend.pages.event_details', compact('setting', 'event', 'recentEvents'));
+    }
+
+    /**
      * Contact Us Page
      */
     public function contact()

@@ -31,6 +31,7 @@ Route::get('/students', [HomeController::class, 'students'])->name('home.student
 Route::get('/gallery', [HomeController::class, 'gallery'])->name('home.gallery');
 Route::get('/notice', [HomeController::class, 'notice'])->name('home.notice');
 Route::get('/event', [HomeController::class, 'event'])->name('home.event');
+Route::get('/event_details/{id}', [HomeController::class, 'event_details'])->name('home.event_details');
 Route::get('/contact', [HomeController::class, 'contact'])->name('home.contact');
 
 // Interactive Public Forms
