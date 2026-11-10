@@ -190,10 +190,6 @@
                     <i class="fa-solid fa-phone text-cyan-400"></i>
                     <span>PHONE: {{ $setting->hotline ?? '+880 1681769149, +880 1735066260' }}</span>
                 </div>
-                <span class="text-slate-600 hidden md:inline">|</span>
-                <span class="hidden md:inline-flex items-center gap-1 text-amber-300 font-semibold">
-                    <i class="fa-solid fa-certificate text-amber-400"></i> BTEB RTO Code: 50821
-                </span>
             </div>
         </div>
     </div>

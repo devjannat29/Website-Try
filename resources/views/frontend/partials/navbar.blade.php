@@ -8,21 +8,6 @@
                      alt="Asia Technical Training Center Logo" 
                      class="h-13 w-auto object-contain transition duration-300 group-hover:scale-105"
                      onerror="this.onerror=null; this.src='{{ asset('upload/attc_shield.png') }}';">
-                <div class="flex flex-col">
-                    <div class="flex items-center gap-2">
-                        <span class="text-lg sm:text-xl font-extrabold tracking-tight text-[#07172c] font-heading leading-tight">
-                            Asia Technical Training Center
-                        </span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="text-xs font-semibold text-slate-500 font-bangla">
-                            এশিয়া টেকনিক্যাল ট্রেনিং সেন্টার
-                        </span>
-                        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-50 text-amber-700 border border-amber-200">
-                            RTO #50821
-                        </span>
-                    </div>
-                </div>
             </a>
 
             <!-- Desktop Navigation Links -->
