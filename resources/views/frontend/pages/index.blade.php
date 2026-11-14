@@ -8,68 +8,75 @@
 <!-- =========================================================================
      1. HERO SECTION (Required: hero_bg.jpg, Specific Title, Subtitle, Contact Us button)
      ========================================================================= -->
-<section class="relative min-h-[580px] lg:min-h-[640px] flex items-center text-white overflow-hidden bg-[#07172c]">
+
+<section class="relative min-h-[580px] lg:min-h-[640px] flex items-center justify-center text-white overflow-hidden bg-[#07172c]">
+
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0 z-0">
-        <img src="{{ asset('upload/hero_bg.jpg') }}" 
-             alt="Asia Technical Training Center Campus and Trainees" 
+        <img src="{{ asset('upload/hero_bg.jpg') }}"
+             alt="Asia Technical Training Center Campus and Trainees"
              class="w-full h-full object-cover object-center filter brightness-90">
-        <!-- Deep Corporate Navy Gradient Overlay for high text contrast and academic feel -->
+
         <div class="absolute inset-0 bg-gradient-to-r from-[#07172c]/95 via-[#07172c]/85 to-[#0b2545]/75"></div>
     </div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 w-full">
-        <div class="max-w-3xl space-y-6">
-            
-            <!-- Main Heading (Exact as requested) -->
+
+        <!-- Centered Content -->
+        <div class="max-w-4xl mx-auto space-y-6 text-center">
+
             <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.15] font-heading">
                 Asia Technical Training Center
             </h1>
 
-            <!-- Subtitle (Exact as requested) -->
-            <p class="text-lg sm:text-2xl font-bold text-amber-400 font-heading">
-                Registered Training Organization - Bangladesh Technical Education Board (BTEB)
+            <p class="text-sm sm:text-base text-slate-200 leading-relaxed max-w-3xl mx-auto font-normal">
+                Government-Registered Training Organization (RTO) and Competency-Based Training & Assessment (CBT&A) Centre under the National Skills Development Authority (NSDA), Prime Minister’s Office, Government of Bangladesh.
             </p>
 
-            <p class="text-sm sm:text-base text-slate-200 leading-relaxed max-w-2xl font-normal">
-                Building world-class technical workforce for local and international job markets. Over 39 years of proven excellence in Electrical, Plumbing, and Civil Construction skills with guaranteed overseas job placement.
-            </p>
+            <!-- Centered Action Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-4 pt-3">
 
-            <!-- Action Buttons with "Contact Us" Button -->
-            <div class="flex flex-wrap items-center gap-4 pt-3">
-                <a href="{{ route('home.contact') }}" 
+                <a href="{{ route('home.contact') }}"
                    class="btn-primary-action px-7 py-3.5 rounded-xl font-bold text-sm flex items-center gap-2 shadow-lg">
                     <i class="fa-solid fa-envelope"></i> Contact Us
                 </a>
-                <a href="{{ route('home.all_course') }}" 
+
+                <a href="{{ route('home.all_course') }}"
                    class="px-7 py-3.5 rounded-xl font-bold text-sm bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-xs transition flex items-center gap-2">
                     <i class="fa-solid fa-shapes text-cyan-300"></i> Explore Courses
                 </a>
-                <a href="{{ route('home.students') }}" 
+
+                <a href="{{ route('home.students') }}"
                    class="px-6 py-3.5 rounded-xl font-bold text-sm bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 backdrop-blur-xs transition flex items-center gap-2">
                     <i class="fa-solid fa-award"></i> Verify Certificate
                 </a>
+
             </div>
 
-            <!-- Key Figures -->
-            <div class="pt-8 border-t border-slate-700/60 grid grid-cols-3 gap-6 max-w-lg">
-                <div>
+            <!-- Key Figures: Equal Space Between -->
+            <div class="pt-8 border-t border-slate-700/60 flex justify-between items-center gap-4 max-w-3xl mx-auto">
+
+                <div class="flex-1 text-center">
                     <p class="text-2xl sm:text-3xl font-black text-white font-heading">39+</p>
-                    <p class="text-xs text-slate-300 font-medium">Years of Legacy</p>
+                    <p class="text-xs sm:text-sm text-slate-300 font-medium">Years of Legacy</p>
                 </div>
-                <div>
+
+                <div class="flex-1 text-center">
                     <p class="text-2xl sm:text-3xl font-black text-cyan-400 font-heading">18,500+</p>
-                    <p class="text-xs text-slate-300 font-medium">Overseas Placed</p>
+                    <p class="text-xs sm:text-sm text-slate-300 font-medium">Overseas Placed</p>
                 </div>
-                <div>
+
+                <div class="flex-1 text-center">
                     <p class="text-2xl sm:text-3xl font-black text-amber-400 font-heading">100%</p>
-                    <p class="text-xs text-slate-300 font-medium">Practical Training</p>
+                    <p class="text-xs sm:text-sm text-slate-300 font-medium">Practical Training</p>
                 </div>
+
             </div>
 
         </div>
     </div>
 </section>
+
 
 <!-- =========================================================================
      2. LATEST NEWS & NOTICE TICKER
@@ -507,138 +514,178 @@
     </div>
 
     <!-- Infinite Scrolling Marquee with Uniform Normalized Logo Boxes -->
-    <div class="relative w-full overflow-hidden py-4">
-        <!-- Edge blur gradients for professional marquee look -->
-        <div class="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#07172c] to-transparent z-10 pointer-events-none"></div>
-        <div class="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[#07172c] to-transparent z-10 pointer-events-none"></div>
+    
+<div class="relative w-full overflow-hidden py-6">
 
-        <div class="animate-infinite-scroll flex items-center gap-6">
-            
-            <!-- Track 1: Partner Logos (Exact Uniform Dimensions) -->
-            @php
-                $partners = [
-                    ['name' => 'Saudi Aramco EPC', 'code' => 'ARAMCO', 'sub' => 'Kingdom of Saudi Arabia', 'icon' => 'fa-industry'],
-                    ['name' => 'Dubai Drydocks World', 'code' => 'DRYDOCKS', 'sub' => 'Dubai, UAE', 'icon' => 'fa-ship'],
-                    ['name' => 'Qatar Energy Contractors', 'code' => 'QATAR ENG', 'sub' => 'Doha, Qatar', 'icon' => 'fa-gas-pump'],
-                    ['name' => 'Sobha Construction LLC', 'code' => 'SOBHA', 'sub' => 'United Arab Emirates', 'icon' => 'fa-building'],
-                    ['name' => 'Habtoor Leighton Group', 'code' => 'HLG GULF', 'sub' => 'GCC Region', 'icon' => 'fa-trowel-bricks'],
-                    ['name' => 'Al Futtaim Engineering', 'code' => 'AL-FUTTAIM', 'sub' => 'Middle East', 'icon' => 'fa-gears'],
-                    ['name' => 'Japan Technical Intern (TITP)', 'code' => 'TITP JAPAN', 'sub' => 'Tokyo, Japan', 'icon' => 'fa-sun'],
-                    ['name' => 'Singapore Marine Shipyard', 'code' => 'SINGAPORE', 'sub' => 'Jurong, Singapore', 'icon' => 'fa-anchor'],
-                ];
-            @endphp
+    <!-- Edge Fade -->
+    <div class="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
 
-            @foreach($partners as $partner)
-                <div class="w-48 h-24 shrink-0 bg-white rounded-xl shadow-md border border-slate-200 flex flex-col items-center justify-center p-3 text-center transition transform hover:scale-105">
-                    <div class="flex items-center justify-center gap-2 mb-1">
-                        <i class="fa-solid {{ $partner['icon'] }} text-[#0284c7] text-base"></i>
-                        <span class="font-black text-slate-800 text-xs tracking-wider font-heading">{{ $partner['code'] }}</span>
-                    </div>
-                    <span class="text-[10px] font-bold text-slate-600 line-clamp-1">{{ $partner['name'] }}</span>
-                    <span class="text-[9px] text-slate-400">{{ $partner['sub'] }}</span>
+    @php
+        $partners = [
+            ['name' => 'Saudi Aramco EPC', 'image' => 'upload/partners/pic3.png'],
+            ['name' => 'Dubai Drydocks World', 'image' => 'upload/partners/pic4.png'],
+            ['name' => 'Qatar Energy Contractors', 'image' => 'upload/partners/pic2.png'],
+            ['name' => 'Sobha Construction LLC', 'image' => 'upload/partners/pic1.jpg'],
+            ['name' => 'Saudi Aramco EPC', 'image' => 'upload/partners/pic3.png'],
+            ['name' => 'Dubai Drydocks World', 'image' => 'upload/partners/pic4.png'],
+            ['name' => 'Qatar Energy Contractors', 'image' => 'upload/partners/pic2.png'],
+            ['name' => 'Sobha Construction LLC', 'image' => 'upload/partners/pic1.jpg'],
+        ];
+    @endphp
+
+    <div class="animate-infinite-scroll flex items-center gap-12 w-max">
+
+        @foreach(array_merge($partners, $partners) as $partner)
+            <div class="group relative shrink-0 w-40 h-24 flex items-center justify-center cursor-pointer">
+
+                <!-- Partner Logo -->
+                <img
+                    src="{{ asset($partner['image']) }}"
+                    alt="{{ $partner['name'] }}"
+                    title="{{ $partner['name'] }}"
+                    class="w-full h-full object-contain transition-all duration-300 group-hover:scale-110"
+                    loading="lazy"
+                >
+
+                <!-- Hover Name -->
+                <div class="absolute -bottom-9 left-1/2 -translate-x-1/2
+                            whitespace-nowrap px-3 py-1.5 rounded-lg
+                            bg-[#07172c] text-white text-xs font-semibold
+                            opacity-0 invisible group-hover:opacity-100
+                            group-hover:visible transition-all duration-300
+                            shadow-lg z-20 pointer-events-none">
+                    {{ $partner['name'] }}
                 </div>
-            @endforeach
 
-            <!-- Track 2 (Duplicate for continuous seamless infinite loop) -->
-            @foreach($partners as $partner)
-                <div class="w-48 h-24 shrink-0 bg-white rounded-xl shadow-md border border-slate-200 flex flex-col items-center justify-center p-3 text-center transition transform hover:scale-105">
-                    <div class="flex items-center justify-center gap-2 mb-1">
-                        <i class="fa-solid {{ $partner['icon'] }} text-[#0284c7] text-base"></i>
-                        <span class="font-black text-slate-800 text-xs tracking-wider font-heading">{{ $partner['code'] }}</span>
-                    </div>
-                    <span class="text-[10px] font-bold text-slate-600 line-clamp-1">{{ $partner['name'] }}</span>
-                    <span class="text-[9px] text-slate-400">{{ $partner['sub'] }}</span>
-                </div>
-            @endforeach
+            </div>
+        @endforeach
 
-        </div>
     </div>
+</div>
+
 </section>
 
 <!-- =========================================================================
      9. EVENTS & LATEST NOTICES
      ========================================================================= -->
+
+<!-- ================= RECENT EVENTS SECTION ================= -->
 <section class="py-16 lg:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            
-            <!-- Left: Recent Events (7 cols) -->
-            <div class="lg:col-span-7 space-y-6">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <div class="section-label">Campus Activities</div>
-                        <h2 class="text-xl sm:text-2xl font-extrabold text-[#07172c] mt-1 font-heading">
-                            Recent Events & Delegations
-                        </h2>
-                    </div>
-                    <a href="{{ route('home.event') }}" class="text-xs font-bold text-[#0284c7] hover:underline">
-                        All Events <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </a>
-                </div>
 
-                <div class="space-y-4">
-                    @forelse($events as $event)
-                        <div class="pro-card p-4 sm:p-5 flex flex-col sm:flex-row gap-4 items-center">
-                            <div class="w-full sm:w-36 h-28 rounded-xl overflow-hidden bg-slate-100 shrink-0">
-                                <img src="{{ $event->image ? asset($event->image) : 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80' }}" 
-                                     alt="{{ $event->title }}" 
-                                     class="w-full h-full object-cover"
-                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80';">
-                            </div>
-                            <div class="flex-grow space-y-1.5 text-center sm:text-left">
-                                <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-sky-50 text-[#0284c7]">
-                                    <i class="fa-regular fa-calendar-days mr-1"></i> {{ $event->date }}
-                                </span>
-                                <h3 class="text-sm font-bold text-[#07172c] line-clamp-2 hover:text-[#0284c7] transition">
-                                    <a href="{{ route('home.event_details', $event->id) }}">{{ $event->title }}</a>
-                                </h3>
-                                <p class="text-xs text-slate-500 line-clamp-2">
-                                    {{ $event->description }}
-                                </p>
-                            </div>
-                        </div>
-                    @empty
-                        <p class="text-xs text-slate-500">No events listed currently.</p>
-                    @endforelse
-                </div>
+        <div class="flex items-center justify-between mb-8">
+            <div>
+                <div class="section-label">Campus Activities</div>
+                <h2 class="text-xl sm:text-2xl font-extrabold text-[#07172c] mt-1 font-heading">
+                    Recent Events & Delegations
+                </h2>
             </div>
 
-            <!-- Right: Notice Board (5 cols) -->
-            <div class="lg:col-span-5 space-y-6">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <div class="section-label">Official Bulletins</div>
-                        <h2 class="text-xl sm:text-2xl font-extrabold text-[#07172c] mt-1 font-heading">
-                            Notice Board
-                        </h2>
-                    </div>
-                    <a href="{{ route('home.notice') }}" class="text-xs font-bold text-[#0284c7] hover:underline">
-                        View All <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </a>
-                </div>
-
-                <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
-                    @forelse($notices as $notice)
-                        <div class="p-3 bg-white rounded-xl border border-slate-100 shadow-2xs hover:border-sky-300 transition">
-                            <div class="flex items-center justify-between gap-2 text-[10px] text-slate-400 mb-1">
-                                <span class="px-2 py-0.5 rounded font-bold bg-amber-50 text-amber-700 border border-amber-200">
-                                    {{ $notice->badge ?? 'Notice' }}
-                                </span>
-                                <span><i class="fa-regular fa-calendar mr-1"></i> {{ $notice->date }}</span>
-                            </div>
-                            <h4 class="text-xs font-bold text-slate-800 line-clamp-2 hover:text-[#0284c7] transition">
-                                <a href="{{ route('home.notice') }}">{{ $notice->title }}</a>
-                            </h4>
-                        </div>
-                    @empty
-                        <p class="text-xs text-slate-500 text-center py-4">No notices published.</p>
-                    @endforelse
-                </div>
-            </div>
-
+            <a href="{{ route('home.event') }}"
+               class="text-xs font-bold text-[#0284c7] hover:underline">
+                All Events <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            @forelse($events as $event)
+
+                <div class="pro-card overflow-hidden rounded-2xl group">
+
+                    <div class="w-full h-48 overflow-hidden bg-slate-100">
+                        <img src="{{ $event->image ? asset($event->image) : 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80' }}"
+                             alt="{{ $event->title }}"
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80';">
+                    </div>
+
+                    <div class="p-5 space-y-2">
+                        <span class="inline-block px-2 py-1 rounded text-[10px] font-bold bg-sky-50 text-[#0284c7]">
+                            <i class="fa-regular fa-calendar-days mr-1"></i>
+                            {{ $event->date }}
+                        </span>
+
+                        <h3 class="text-base font-bold text-[#07172c] line-clamp-2 group-hover:text-[#0284c7] transition">
+                            <a href="{{ route('home.event_details', $event->id) }}">
+                                {{ $event->title }}
+                            </a>
+                        </h3>
+
+                        <p class="text-sm text-slate-500 line-clamp-3">
+                            {{ $event->description }}
+                        </p>
+
+                        <a href="{{ route('home.event_details', $event->id) }}"
+                           class="inline-flex items-center gap-2 text-xs font-bold text-[#0284c7] pt-2">
+                            Read More <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            @empty
+                <p class="text-sm text-slate-500">No events listed currently.</p>
+            @endforelse
+        </div>
+
     </div>
 </section>
+
+
+<!-- ================= NOTICE BOARD SECTION ================= -->
+<section class="py-16 lg:py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="flex items-center justify-between mb-8">
+            <div>
+                <div class="section-label">Official Bulletins</div>
+                <h2 class="text-xl sm:text-2xl font-extrabold text-[#07172c] mt-1 font-heading">
+                    Notice Board
+                </h2>
+            </div>
+
+            <a href="{{ route('home.notice') }}"
+               class="text-xs font-bold text-[#0284c7] hover:underline">
+                View All <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+            @forelse($notices as $notice)
+
+                <div class="p-5 bg-white rounded-xl border border-slate-200 shadow-sm hover:border-sky-300 hover:shadow-md transition">
+
+                    <div class="flex items-center justify-between gap-2 text-[10px] text-slate-400 mb-3">
+                        <span class="px-2 py-1 rounded font-bold bg-amber-50 text-amber-700 border border-amber-200">
+                            {{ $notice->badge ?? 'Notice' }}
+                        </span>
+
+                        <span>
+                            <i class="fa-regular fa-calendar mr-1"></i>
+                            {{ $notice->date }}
+                        </span>
+                    </div>
+
+                    <h4 class="text-sm font-bold text-slate-800 line-clamp-2 hover:text-[#0284c7] transition">
+                        <a href="{{ route('home.notice') }}">
+                            {{ $notice->title }}
+                        </a>
+                    </h4>
+
+                </div>
+
+            @empty
+                <p class="text-sm text-slate-500">No notices published.</p>
+            @endforelse
+
+        </div>
+
+    </div>
+</section>
+
+
 
 <!-- =========================================================================
      10. QUICK ADMISSION APPLICATION / INQUIRY BANNER
