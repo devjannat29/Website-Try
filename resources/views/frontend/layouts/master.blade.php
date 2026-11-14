@@ -179,20 +179,33 @@
 <body class="bg-white text-slate-800 antialiased flex flex-col min-h-screen">
 
     <!-- Top Announcement Bar (Deep Corporate Navy) -->
-    <div class="bg-[#081d34] text-white text-[12px] sm:text-xs py-2 px-4 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-1.5 font-medium tracking-wide">
-            <div class="flex items-center gap-2">
-                <i class="fa-solid fa-location-dot text-cyan-400"></i>
-                <span>ADDRESS: {{ $setting->address ?? '149/9-C, Shah Alibag, Mirpur-1, Dhaka- 1216' }}</span>
+<div class="bg-[#081d34] text-white text-[12px] sm:text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 font-medium tracking-wide">
+
+        <!-- Address -->
+        <div class="flex items-center gap-2">
+            <i class="fa-solid fa-location-dot text-cyan-400"></i>
+            <span>ADDRESS: {{ $setting->address ?? '149/9-C, Shah Alibag, Mirpur-1, Dhaka-1216' }}</span>
+        </div>
+
+        <!-- Phone & Login -->
+        <div class="flex items-center gap-4">
+
+            <div class="flex items-center gap-1.5">
+                <i class="fa-solid fa-phone text-cyan-400"></i>
+                <span>PHONE: {{ $setting->hotline ?? '+880 1681769149, +880 1735066260' }}</span>
             </div>
-            <div class="flex items-center gap-3">
-                <div class="flex items-center gap-1.5">
-                    <i class="fa-solid fa-phone text-cyan-400"></i>
-                    <span>PHONE: {{ $setting->hotline ?? '+880 1681769149, +880 1735066260' }}</span>
-                </div>
-            </div>
+
+            <!-- Login Button -->
+            <a href="{{ route('admin.login') }}"
+               class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md border border-cyan-400/50 text-cyan-300 hover:bg-cyan-400 hover:text-[#081d34] transition duration-300 font-bold">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                <span>Login</span>
+            </a>
+
         </div>
     </div>
+</div>
 
     <!-- Main Navigation Bar -->
     @include('frontend.partials.navbar')

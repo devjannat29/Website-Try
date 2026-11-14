@@ -21,19 +21,6 @@
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 w-full">
         <div class="max-w-3xl space-y-6">
             
-            <!-- Accreditation Badges -->
-            <div class="flex flex-wrap items-center gap-2.5">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
-                    <i class="fa-solid fa-certificate text-amber-400"></i> BTEB RTO Code: 50821
-                </span>
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/20 text-cyan-300 border border-sky-500/30">
-                    <i class="fa-solid fa-shield-halved text-cyan-400"></i> Govt. Recognized & BMET Partner
-                </span>
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                    <i class="fa-solid fa-clock-rotate-left text-emerald-400"></i> Est. 1985 (39+ Years)
-                </span>
-            </div>
-
             <!-- Main Heading (Exact as requested) -->
             <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.15] font-heading">
                 Asia Technical Training Center

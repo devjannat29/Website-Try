@@ -83,7 +83,7 @@
                 <!-- Job Placement Dropdown -->
                 <div class="relative" @mouseenter="placementDropdown = true" @mouseleave="placementDropdown = false">
                     <button class="px-3 py-2 text-sm rounded-lg transition inline-flex items-center gap-1 {{ request()->routeIs('home.placement_cell') || request()->routeIs('home.job') || request()->routeIs('home.interview') ? 'text-[#0284c7] font-bold bg-sky-50' : 'text-slate-700 hover:text-[#0284c7] hover:bg-slate-50' }}">
-                        <span>Overseas Placement</span>
+                        <span>Overseas</span>
                         <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 transition" :class="placementDropdown ? 'rotate-180 text-[#0284c7]' : ''"></i>
                     </button>
                     <div x-show="placementDropdown" 
@@ -112,28 +112,17 @@
                     Gallery
                 </a>
 
-                <!-- Notice & Events Dropdown -->
-                <div class="relative" @mouseenter="noticesDropdown = true" @mouseleave="noticesDropdown = false">
-                    <button class="px-3 py-2 text-sm rounded-lg transition inline-flex items-center gap-1 {{ request()->routeIs('home.notice') || request()->routeIs('home.event*') ? 'text-[#0284c7] font-bold bg-sky-50' : 'text-slate-700 hover:text-[#0284c7] hover:bg-slate-50' }}">
-                        <span>Notices & Events</span>
-                        <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 transition" :class="noticesDropdown ? 'rotate-180 text-[#0284c7]' : ''"></i>
-                    </button>
-                    <div x-show="noticesDropdown" 
-                         x-transition:enter="transition ease-out duration-150" 
-                         x-transition:enter-start="opacity-0 translate-y-2" 
-                         x-transition:enter-end="opacity-100 translate-y-0" 
-                         x-transition:leave="transition ease-in duration-100" 
-                         x-transition:leave-start="opacity-100 translate-y-0" 
-                         x-transition:leave-end="opacity-0 translate-y-2" 
-                         class="absolute left-0 mt-1 w-56 rounded-xl bg-white border border-slate-200 shadow-xl p-2 z-50">
-                        <a href="{{ route('home.notice') }}" class="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-slate-700 hover:text-[#0284c7] hover:bg-sky-50 rounded-lg transition">
-                            <i class="fa-solid fa-bullhorn text-amber-500 w-4"></i> Notice Board
-                        </a>
-                        <a href="{{ route('home.event') }}" class="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-slate-700 hover:text-[#0284c7] hover:bg-sky-50 rounded-lg transition">
-                            <i class="fa-solid fa-calendar-days text-indigo-500 w-4"></i> Seminars & Events
-                        </a>
-                    </div>
-                </div>
+                <!-- Notice  -->
+                <a href="{{ route('home.notice') }}"
+                    class="px-3 py-2 text-sm rounded-lg transition {{ request()->routeIs('home.notice') ? 'text-[#0284c7] font-bold bg-sky-50' : 'text-slate-700 hover:text-[#0284c7] hover:bg-slate-50' }}">
+                        Notice
+                </a>
+
+                <!-- Events -->
+                <a href="{{ route('home.event') }}"
+                    class="px-3 py-2 text-sm rounded-lg transition {{ request()->routeIs('home.event*') ? 'text-[#0284c7] font-bold bg-sky-50' : 'text-slate-700 hover:text-[#0284c7] hover:bg-slate-50' }}">
+                    Events
+                </a>
 
                 <!-- Contact -->
                 <a href="{{ route('home.contact') }}" 
@@ -148,11 +137,6 @@
                    class="px-3.5 py-2 text-xs font-bold rounded-lg border border-slate-300 text-slate-700 hover:text-[#0284c7] hover:border-[#0284c7] hover:bg-sky-50 transition flex items-center gap-1.5 shadow-2xs">
                     <i class="fa-solid fa-award text-amber-600"></i>
                     <span>Verify Certificate</span>
-                </a>
-                <a href="{{ route('home.contact') }}#admissionForm" 
-                   class="btn-primary-action px-4 py-2 text-xs font-bold rounded-lg flex items-center gap-1.5 shadow-sm">
-                    <i class="fa-solid fa-paper-plane"></i>
-                    <span>Apply Online</span>
                 </a>
             </div>
 
@@ -203,7 +187,7 @@
         </div>
 
         <div class="py-1">
-            <p class="px-3 text-[11px] font-bold text-slate-400 uppercase tracking-wider">Overseas Placement</p>
+            <p class="px-3 text-[11px] font-bold text-slate-400 uppercase tracking-wider">Overseas</p>
             <a href="{{ route('home.placement_cell') }}" class="block px-3 py-1.5 text-sm text-slate-600 hover:text-[#0284c7]">Placement Cell</a>
             <a href="{{ route('home.job') }}" class="block px-3 py-1.5 text-sm text-slate-600 hover:text-[#0284c7]">Job Circulars</a>
             <a href="{{ route('home.interview') }}" class="block px-3 py-1.5 text-sm text-slate-600 hover:text-[#0284c7]">Upcoming Interviews</a>
@@ -214,24 +198,21 @@
         </a>
 
         <a href="{{ route('home.notice') }}" class="block px-3 py-2 text-sm font-semibold rounded-lg text-slate-700 hover:bg-sky-50 hover:text-[#0284c7]">
-            Notice Board
+            Notice
         </a>
 
         <a href="{{ route('home.event') }}" class="block px-3 py-2 text-sm font-semibold rounded-lg text-slate-700 hover:bg-sky-50 hover:text-[#0284c7]">
-            Events & Seminars
+            Events 
         </a>
 
         <a href="{{ route('home.contact') }}" class="block px-3 py-2 text-sm font-semibold rounded-lg text-slate-700 hover:bg-sky-50 hover:text-[#0284c7]">
             Contact Us
         </a>
 
-        <div class="pt-3 border-t border-slate-200 grid grid-cols-2 gap-2">
+        <!-- <div class="pt-3 border-t border-slate-200 grid grid-cols-2 gap-2">
             <a href="{{ route('home.students') }}" class="w-full text-center py-2 text-xs font-bold rounded-lg border border-slate-300 text-slate-700 bg-slate-50">
                 <i class="fa-solid fa-award text-amber-500 mr-1"></i> Verify Certificate
             </a>
-            <a href="{{ route('home.contact') }}#admissionForm" class="btn-primary-action w-full text-center py-2 text-xs font-bold rounded-lg">
-                <i class="fa-solid fa-paper-plane mr-1"></i> Apply Online
-            </a>
-        </div>
+        </div> -->
     </div>
 </header>
