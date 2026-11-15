@@ -85,36 +85,55 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             @foreach($members as $m)
-                <div class="pro-card overflow-hidden group">
-                    <div class="relative h-64 overflow-hidden bg-slate-200">
-                        <img src="{{ $m->image ? asset($m->image) : 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80' }}" 
+                <!-- Professional Member Card (Guaranteed Full Portrait Display on Large Screens) -->
+                <div class="pro-card overflow-hidden group flex flex-col justify-between bg-white rounded-2xl border border-slate-200 shadow-xs hover:shadow-xl hover:border-slate-300 transition-all duration-300">
+                    
+                    <!-- Proportional 4:5 Portrait Frame: Guarantees full head, chin, neck & shoulders with zero distortion -->
+                    <div class="relative w-full overflow-hidden bg-slate-900 flex items-center justify-center" style="aspect-ratio: 4 / 5; min-height: 380px;">
+                        
+                        <!-- Ambient blurred background matching the photo tone for any irregular upload -->
+                        <img src="{{ $m->image ? (str_starts_with($m->image, 'http') ? $m->image : asset($m->image)) : asset('upload/member/member_1.jpg') }}" 
+                             alt="" 
+                             class="absolute inset-0 w-full h-full object-cover blur-md opacity-35 scale-110 pointer-events-none select-none" 
+                             aria-hidden="true">
+
+                        <!-- Main Crisp Photo: object-top keeps hair, forehead, eyes, nose, mouth and chin fully visible -->
+                        <img src="{{ $m->image ? (str_starts_with($m->image, 'http') ? $m->image : asset($m->image)) : asset('upload/member/member_1.jpg') }}" 
                              alt="{{ $m->name }}" 
-                             class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-105"
-                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80';">
-                        <div class="absolute top-3 left-3 bg-[#07172c]/90 text-amber-400 font-bold text-[11px] px-3 py-1 rounded-md backdrop-blur-xs shadow-sm">
+                             class="relative z-10 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                             onerror="this.onerror=null; this.src='{{ asset('upload/member/member_1.jpg') }}';">
+                        
+                        <!-- Bottom Gradient Shade -->
+                        <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#07172c]/70 via-transparent to-transparent pointer-events-none z-10"></div>
+
+                        <!-- Top Designation Badge -->
+                        <div class="absolute top-3.5 left-3.5 z-20 bg-[#07172c]/95 text-amber-400 font-bold text-[11px] sm:text-xs px-3 py-1 rounded-md backdrop-blur-md shadow-md border border-amber-400/20 uppercase tracking-wide">
                             {{ $m->designation }}
                         </div>
                     </div>
 
-                    <div class="p-6 text-center space-y-2">
-                        <h3 class="text-lg font-bold text-[#07172c] font-heading group-hover:text-[#0284c7] transition">
-                            {{ $m->name }}
-                        </h3>
-                        <p class="text-xs font-semibold text-[#0284c7]">
-                            {{ $m->department ?? 'Management' }}
-                        </p>
-                        <p class="text-xs text-slate-500">
-                            <i class="fa-solid fa-graduation-cap text-slate-400 mr-1"></i> {{ $m->education ?? 'Engineering Expert' }}
-                        </p>
+                    <div class="p-6 text-center space-y-2 flex-grow flex flex-col justify-between bg-white">
+                        <div class="space-y-1">
+                            <h3 class="text-lg sm:text-xl font-bold text-[#07172c] font-heading group-hover:text-[#0284c7] transition duration-200">
+                                {{ $m->name }}
+                            </h3>
+                            <p class="text-xs font-semibold text-[#0284c7] uppercase tracking-wider">
+                                {{ $m->department ?? 'Management' }}
+                            </p>
+                            <p class="text-xs text-slate-500 font-medium">
+                                <i class="fa-solid fa-graduation-cap text-[#0284c7]/80 mr-1.5"></i> {{ $m->education ?? 'Engineering Expert' }}
+                            </p>
+                        </div>
 
-                        <div class="pt-4 flex items-center justify-center space-x-2 border-t border-slate-100">
-                            <a href="#" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-[#0284c7] hover:text-white text-slate-500 flex items-center justify-center text-xs transition">
+                        <!-- Social / Contact Links -->
+                        <div class="pt-4 flex items-center justify-center space-x-2.5 border-t border-slate-100">
+                            <a href="#" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-[#0284c7] hover:text-white text-slate-500 flex items-center justify-center text-xs transition duration-200 shadow-2xs" title="Facebook">
                                 <i class="fa-brands fa-facebook-f"></i>
                             </a>
-                            <a href="#" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-[#0284c7] hover:text-white text-slate-500 flex items-center justify-center text-xs transition">
+                            <a href="#" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-[#0284c7] hover:text-white text-slate-500 flex items-center justify-center text-xs transition duration-200 shadow-2xs" title="LinkedIn">
                                 <i class="fa-brands fa-linkedin-in"></i>
                             </a>
-                            <a href="mailto:asiatechnicalbd@gmail.com" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-[#0284c7] hover:text-white text-slate-500 flex items-center justify-center text-xs transition">
+                            <a href="mailto:asiatechnicalbd@gmail.com" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-[#0284c7] hover:text-white text-slate-500 flex items-center justify-center text-xs transition duration-200 shadow-2xs" title="Email">
                                 <i class="fa-solid fa-envelope"></i>
                             </a>
                         </div>

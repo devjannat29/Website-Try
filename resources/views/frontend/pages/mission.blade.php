@@ -13,10 +13,7 @@
 
 <section class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            
-            <!-- Main Content Area (8 Cols) -->
-            <div class="lg:col-span-8 space-y-8">
+        <div class="space-y-8">
                 
                 <!-- Mission Card -->
                 <div class="pro-card p-8 border-l-4 border-l-[#0284c7]">
@@ -30,11 +27,8 @@
                         </div>
                     </div>
                     <div class="text-sm text-slate-600 leading-relaxed space-y-3">
-                        <p>
-                            {{ $about->mission ?? 'ASIA TECHNICAL TRAINING CENTRE (ATTC) was founded in 1985 with a view to provide training to unemployed peoples to get employment. ATTC has continuing to conduct vast activities in the Education, Training, and Health & Social sectors and has been offering various training courses and always been associated with skills development for local and overseas job seekers.' }}
-                        </p>
                         <p class="font-bangla text-slate-700 bg-sky-50/60 p-4 rounded-xl border border-sky-100">
-                            বাংলাদেশের সাধারণ যুব সমাজের জন্য কর্মসংস্থানের সুযোগ সৃষ্টিতে গুরুত্বপূর্ণ অবদান রাখে বৈদেশিক কর্মসংস্থান। এই বৈদেশিক মুদ্রা অর্জনে গুরুত্বপূর্ণ ভূমিকা পালন করে আসছে এশিয়া টেকনিক্যাল ট্রেনিং সেন্টার। দেশের সামগ্রিক অর্থনৈতিক সমৃদ্ধি অর্জনে সহায়ক ভূমিকা পালন করতে পারে বৈদেশিক মুদ্রা অর্জনে সহায়ক মানবসম্পদ গড়ে তোলার জন্য এই প্রতিষ্ঠান।
+                            {{ $about->mission ?? 'ASIA TECHNICAL TRAINING CENTRE (ATTC) was founded in 1985 with a view to provide training to unemployed peoples to get employment. ATTC has continuing to conduct vast activities in the Education, Training, and Health & Social sectors and has been offering various training courses and always been associated with skills development for local and overseas job seekers.' }}
                         </p>
                     </div>
                 </div>
@@ -50,9 +44,11 @@
                             <h2 class="text-2xl font-bold text-[#07172c] font-heading">Our Vision</h2>
                         </div>
                     </div>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        {{ $about->vission ?? 'To be the benchmark technical training and overseas skill development center in Bangladesh, empowering youth with certified technical excellence for international career opportunities.' }}
-                    </p>
+                    <div class="text-sm text-slate-600 leading-relaxed space-y-3">
+                        <p class="font-bangla text-slate-700 bg-sky-50/60 p-4 rounded-xl border border-sky-100">
+                            {{ $about->vission ?? 'ASIA TECHNICAL TRAINING CENTRE (ATTC) was founded in 1985 with a view to provide training to unemployed peoples to get employment. ATTC has continuing to conduct vast activities in the Education, Training, and Health & Social sectors and has been offering various training courses and always been associated with skills development for local and overseas job seekers.' }}
+                        </p>
+                    </div>
                 </div>
 
                 <!-- Core Pillars -->
@@ -77,12 +73,6 @@
                     </div>
                 </div>
 
-            </div>
-
-            <!-- Sidebar (4 Cols) -->
-            <div class="lg:col-span-4 space-y-6">
-                @include('frontend.partials.hotline_card')
-            </div>
 
         </div>
     </div>

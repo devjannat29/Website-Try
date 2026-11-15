@@ -49,7 +49,7 @@
                     Services
                 </a>
 
-                <!-- Courses Dropdown -->
+                <!-- Courses Dropdown (Mega Menu: Program Types + Trade Departments) -->
                 <div class="relative" @mouseenter="courseDropdown = true" @mouseleave="courseDropdown = false">
                     <a href="{{ route('home.all_course') }}" 
                        class="px-3 py-2 text-sm rounded-lg transition inline-flex items-center gap-1 {{ request()->routeIs('home.all_course*') || request()->routeIs('home.course_*') ? 'text-[#0284c7] font-bold bg-sky-50' : 'text-slate-700 hover:text-[#0284c7] hover:bg-slate-50' }}">
@@ -63,20 +63,108 @@
                          x-transition:leave="transition ease-in duration-100" 
                          x-transition:leave-start="opacity-100 translate-y-0" 
                          x-transition:leave-end="opacity-0 translate-y-2" 
-                         class="absolute left-0 mt-1 w-64 rounded-xl bg-white border border-slate-200 shadow-xl p-2 z-50">
-                        <a href="{{ route('home.all_course') }}" class="flex items-center gap-2.5 px-3 py-2 text-xs font-bold text-[#0284c7] hover:bg-sky-50 rounded-lg transition">
-                            <i class="fa-solid fa-shapes w-4"></i> All Technical Trades
-                        </a>
-                        <div class="h-px bg-slate-100 my-1"></div>
-                        <a href="{{ route('home.course_category_details', 1) }}" class="flex items-center gap-2.5 px-3 py-2 text-xs font-medium text-slate-700 hover:text-[#0284c7] hover:bg-sky-50 rounded-lg transition">
-                            <i class="fa-solid fa-helmet-safety text-amber-500 w-4"></i> Civil Construction (Rod Binder)
-                        </a>
-                        <a href="{{ route('home.course_category_details', 2) }}" class="flex items-center gap-2.5 px-3 py-2 text-xs font-medium text-slate-700 hover:text-[#0284c7] hover:bg-sky-50 rounded-lg transition">
-                            <i class="fa-solid fa-faucet-drip text-blue-500 w-4"></i> Plumbing & Pipe Fitting
-                        </a>
-                        <a href="{{ route('home.course_category_details', 3) }}" class="flex items-center gap-2.5 px-3 py-2 text-xs font-medium text-slate-700 hover:text-[#0284c7] hover:bg-sky-50 rounded-lg transition">
-                            <i class="fa-solid fa-bolt text-yellow-500 w-4"></i> Electrical & Electronics
-                        </a>
+                         class="absolute -left-16 mt-1 w-[560px] rounded-2xl bg-white border border-slate-200 shadow-2xl p-5 z-50 grid grid-cols-2 gap-5 divide-x divide-slate-100">
+                        
+                        <!-- Left Column: Program Types (Short Courses, RPL, Free Govt, Paid) -->
+                        <div>
+                            <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-100">
+                                <span class="text-[11px] font-black uppercase tracking-wider text-slate-400">
+                                    <i class="fa-solid fa-graduation-cap text-[#0284c7] mr-1"></i> Program Types
+                                </span>
+                                <span class="text-[10px] bg-sky-50 text-[#0284c7] font-bold px-1.5 py-0.5 rounded">BTEB</span>
+                            </div>
+
+                            <div class="space-y-1">
+                                <a href="{{ route('home.all_course') }}" 
+                                   class="flex items-center justify-between px-3 py-2 text-xs font-bold text-[#0284c7] hover:bg-sky-50 rounded-lg transition group">
+                                    <span class="flex items-center gap-2">
+                                        <i class="fa-solid fa-shapes text-[#0284c7] w-4"></i> All Courses
+                                    </span>
+                                    <span class="text-[10px] bg-sky-100 text-[#0284c7] font-extrabold px-1.5 py-0.5 rounded-full">All</span>
+                                </a>
+
+                                <a href="{{ route('home.all_course', ['type' => 'short_course']) }}" 
+                                   class="flex items-center justify-between px-3 py-2 text-xs font-semibold text-slate-700 hover:text-[#0284c7] hover:bg-sky-50 rounded-lg transition group">
+                                    <span class="flex items-center gap-2">
+                                        <i class="fa-solid fa-clock-rotate-left text-slate-400 group-hover:text-[#0284c7] w-4"></i> Short Courses
+                                    </span>
+                                    <span class="text-[10px] bg-slate-100 text-slate-600 font-bold px-1.5 py-0.5 rounded">3-6 Mo</span>
+                                </a>
+
+                                <a href="{{ route('home.all_course', ['type' => 'rpl']) }}" 
+                                   class="flex items-center justify-between px-3 py-2 text-xs font-semibold text-slate-700 hover:text-amber-600 hover:bg-amber-50 rounded-lg transition group">
+                                    <span class="flex items-center gap-2">
+                                        <i class="fa-solid fa-stamp text-amber-500 w-4"></i> RPL (Prior Learning)
+                                    </span>
+                                    <span class="text-[10px] bg-amber-100 text-amber-800 font-bold px-1.5 py-0.5 rounded">Exam</span>
+                                </a>
+
+                                <a href="{{ route('home.all_course', ['pricing' => 'free']) }}" 
+                                   class="flex items-center justify-between px-3 py-2 text-xs font-semibold text-slate-700 hover:text-emerald-700 hover:bg-emerald-50 rounded-lg transition group">
+                                    <span class="flex items-center gap-2">
+                                        <i class="fa-solid fa-gift text-emerald-600 w-4"></i> Free (Govt. Subsidized)
+                                    </span>
+                                    <span class="text-[10px] bg-emerald-100 text-emerald-800 font-black px-1.5 py-0.5 rounded uppercase">Free</span>
+                                </a>
+
+                                <a href="{{ route('home.all_course', ['pricing' => 'paid']) }}" 
+                                   class="flex items-center justify-between px-3 py-2 text-xs font-semibold text-slate-700 hover:text-[#0284c7] hover:bg-sky-50 rounded-lg transition group">
+                                    <span class="flex items-center gap-2">
+                                        <i class="fa-solid fa-certificate text-sky-500 w-4"></i> Paid Professional
+                                    </span>
+                                    <span class="text-[10px] bg-slate-100 text-slate-600 font-bold px-1.5 py-0.5 rounded">Pro</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Trade Departments (Electrical, English, Civil, Plumbing, Safety, etc.) -->
+                        <div class="pl-5">
+                            <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-100">
+                                <span class="text-[11px] font-black uppercase tracking-wider text-slate-400">
+                                    <i class="fa-solid fa-layer-group text-cyan-600 mr-1"></i> Trade Departments
+                                </span>
+                                <span class="text-[10px] text-slate-400 font-semibold">Practical Labs</span>
+                            </div>
+
+                            <div class="space-y-1">
+                                <a href="{{ route('home.course_category_details', 3) }}" 
+                                   class="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-slate-700 hover:text-[#0284c7] hover:bg-sky-50 rounded-lg transition group">
+                                    <i class="fa-solid fa-bolt text-yellow-500 w-4"></i>
+                                    <span>Electrical & Electronics</span>
+                                </a>
+
+                                <a href="{{ route('home.course_category_details', 4) }}" 
+                                   class="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-slate-700 hover:text-[#0284c7] hover:bg-sky-50 rounded-lg transition group">
+                                    <i class="fa-solid fa-language text-sky-500 w-4"></i>
+                                    <span>English Language & Workplace</span>
+                                </a>
+
+                                <a href="{{ route('home.course_category_details', 1) }}" 
+                                   class="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-slate-700 hover:text-[#0284c7] hover:bg-sky-50 rounded-lg transition group">
+                                    <i class="fa-solid fa-helmet-safety text-amber-500 w-4"></i>
+                                    <span>Civil Construction (Rod Binder)</span>
+                                </a>
+
+                                <a href="{{ route('home.course_category_details', 2) }}" 
+                                   class="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-slate-700 hover:text-[#0284c7] hover:bg-sky-50 rounded-lg transition group">
+                                    <i class="fa-solid fa-faucet-drip text-blue-500 w-4"></i>
+                                    <span>Plumbing & Pipe Fitting</span>
+                                </a>
+
+                                <a href="{{ route('home.course_category_details', 5) }}" 
+                                   class="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-slate-700 hover:text-[#0284c7] hover:bg-sky-50 rounded-lg transition group">
+                                    <i class="fa-solid fa-shield-halved text-emerald-600 w-4"></i>
+                                    <span>Industrial Safety & HSE</span>
+                                </a>
+
+                                <a href="{{ route('home.course_category_details', 6) }}" 
+                                   class="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-slate-700 hover:text-[#0284c7] hover:bg-sky-50 rounded-lg transition group">
+                                    <i class="fa-solid fa-snowflake text-cyan-500 w-4"></i>
+                                    <span>HVAC & Refrigeration</span>
+                                </a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
@@ -179,11 +267,45 @@
         </a>
 
         <div class="py-1">
-            <p class="px-3 text-[11px] font-bold text-slate-400 uppercase tracking-wider">Courses</p>
-            <a href="{{ route('home.all_course') }}" class="block px-3 py-1.5 text-sm font-medium text-slate-600 hover:text-[#0284c7]">All Courses</a>
-            <a href="{{ route('home.course_category_details', 1) }}" class="block px-3 py-1.5 text-sm text-slate-600 hover:text-[#0284c7]">Civil Construction</a>
-            <a href="{{ route('home.course_category_details', 2) }}" class="block px-3 py-1.5 text-sm text-slate-600 hover:text-[#0284c7]">Plumbing & Pipe Fitting</a>
-            <a href="{{ route('home.course_category_details', 3) }}" class="block px-3 py-1.5 text-sm text-slate-600 hover:text-[#0284c7]">Electrical & Electronics</a>
+            <p class="px-3 text-[11px] font-black text-slate-400 uppercase tracking-wider flex items-center justify-between">
+                <span>Courses By Program</span>
+                <span class="text-[9px] bg-sky-100 text-[#0284c7] font-extrabold px-1.5 py-0.5 rounded">BTEB</span>
+            </p>
+            <a href="{{ route('home.all_course') }}" class="block px-3 py-1.5 text-sm font-bold text-[#0284c7] hover:bg-sky-50">
+                <i class="fa-solid fa-shapes text-[#0284c7] mr-1.5 w-4"></i> All Technical Courses
+            </a>
+            <a href="{{ route('home.all_course', ['type' => 'short_course']) }}" class="block px-3 py-1.5 text-sm text-slate-600 hover:text-[#0284c7]">
+                <i class="fa-solid fa-clock-rotate-left text-slate-400 mr-1.5 w-4"></i> Short Courses (3-6 Months)
+            </a>
+            <a href="{{ route('home.all_course', ['type' => 'rpl']) }}" class="block px-3 py-1.5 text-sm text-slate-600 hover:text-amber-600">
+                <i class="fa-solid fa-stamp text-amber-500 mr-1.5 w-4"></i> RPL (Prior Learning Assessment)
+            </a>
+            <a href="{{ route('home.all_course', ['pricing' => 'free']) }}" class="block px-3 py-1.5 text-sm font-semibold text-emerald-600 hover:text-emerald-700">
+                <i class="fa-solid fa-gift text-emerald-600 mr-1.5 w-4"></i> Free (Govt. Subsidized Courses)
+            </a>
+            <a href="{{ route('home.all_course', ['pricing' => 'paid']) }}" class="block px-3 py-1.5 text-sm text-slate-600 hover:text-[#0284c7]">
+                <i class="fa-solid fa-certificate text-sky-500 mr-1.5 w-4"></i> Paid Professional Certification
+            </a>
+
+            <p class="px-3 pt-3 text-[11px] font-black text-slate-400 uppercase tracking-wider">Courses By Department</p>
+            <a href="{{ route('home.course_category_details', 3) }}" class="block px-3 py-1.5 text-sm text-slate-600 hover:text-[#0284c7]">
+                <i class="fa-solid fa-bolt text-yellow-500 mr-1.5 w-4"></i> Electrical & Electronics
+            </a>
+            <a href="{{ route('home.course_category_details', 4) }}" class="block px-3 py-1.5 text-sm text-slate-600 hover:text-[#0284c7]">
+                <i class="fa-solid fa-language text-sky-500 mr-1.5 w-4"></i> English Language & Workplace
+            </a>
+            <a href="{{ route('home.course_category_details', 1) }}" class="block px-3 py-1.5 text-sm text-slate-600 hover:text-[#0284c7]">
+                <i class="fa-solid fa-helmet-safety text-amber-500 mr-1.5 w-4"></i> Civil Construction (Rod Binder)
+            </a>
+            <a href="{{ route('home.course_category_details', 2) }}" class="block px-3 py-1.5 text-sm text-slate-600 hover:text-[#0284c7]">
+                <i class="fa-solid fa-faucet-drip text-blue-500 mr-1.5 w-4"></i> Plumbing & Pipe Fitting
+            </a>
+            <a href="{{ route('home.course_category_details', 5) }}" class="block px-3 py-1.5 text-sm text-slate-600 hover:text-[#0284c7]">
+                <i class="fa-solid fa-shield-halved text-emerald-600 mr-1.5 w-4"></i> Industrial Safety & HSE
+            </a>
+            <a href="{{ route('home.course_category_details', 6) }}" class="block px-3 py-1.5 text-sm text-slate-600 hover:text-[#0284c7]">
+                <i class="fa-solid fa-snowflake text-cyan-500 mr-1.5 w-4"></i> HVAC & Refrigeration
+            </a>
         </div>
 
         <div class="py-1">

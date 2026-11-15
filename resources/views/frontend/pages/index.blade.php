@@ -1,85 +1,90 @@
 @extends('frontend.layouts.master')
 
 @section('title', 'Asia Technical Training Center | BTEB Registered Training Organization #50821')
-@section('meta_description', 'Asia Technical Training Center (ATTC) is a premier BTEB registered vocational training institute in Mirpur-1, Dhaka offering certified courses in Electrical, Plumbing, and Civil Construction with overseas employment.')
+@section('meta_description', 'Asia Technical Training Center (ATTC) is a premier BTEB registered vocational training institute in Mirpur-1, Dhaka offering certified short courses, RPL assessments, free govt training, and overseas job placement.')
 
 @section('content')
 
 <!-- =========================================================================
-     1. HERO SECTION (Required: hero_bg.jpg, Specific Title, Subtitle, Contact Us button)
+     1. HERO SECTION (Full Screen Size with Centered Title & Content)
      ========================================================================= -->
-
-<section class="relative min-h-[580px] lg:min-h-[640px] flex items-center justify-center text-white overflow-hidden bg-[#07172c]">
-
+<section class="relative min-h-screen flex items-center justify-center text-white overflow-hidden bg-[#07172c]">
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0 z-0">
-        <img src="{{ asset('upload/hero_bg.jpg') }}"
-             alt="Asia Technical Training Center Campus and Trainees"
+        <img src="{{ asset('upload/hero_bg.jpg') }}" 
+             alt="Asia Technical Training Center Campus and Trainees" 
              class="w-full h-full object-cover object-center filter brightness-90">
-
-        <div class="absolute inset-0 bg-gradient-to-r from-[#07172c]/95 via-[#07172c]/85 to-[#0b2545]/75"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-[#07172c]/95 via-[#07172c]/85 to-[#0b2545]/90"></div>
     </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 w-full">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 w-full text-center">
+        <div class="max-w-4xl mx-auto space-y-6">
+            
+            <!-- Accreditation Badges -->
+            <!-- <div class="flex flex-wrap items-center justify-center gap-2.5">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                    <i class="fa-solid fa-certificate text-amber-400"></i> BTEB RTO Code: 50821
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/20 text-cyan-300 border border-sky-500/30">
+                    <i class="fa-solid fa-shield-halved text-cyan-400"></i> Govt. Recognized & BMET Partner
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                    <i class="fa-solid fa-clock-rotate-left text-emerald-400"></i> Est. 1985 (39+ Years)
+                </span>
+            </div> -->
 
-        <!-- Centered Content -->
-        <div class="max-w-4xl mx-auto space-y-6 text-center">
-
+            <!-- Main Heading (Centered Middle) -->
             <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.15] font-heading">
                 Asia Technical Training Center
             </h1>
 
+            <!-- Subtitle -->
+            <!-- <p class="text-base sm:text-2xl font-bold text-amber-400 font-heading">
+                Registered Training Organization - Bangladesh Technical Education Board (BTEB)
+            </p> -->
+
             <p class="text-sm sm:text-base text-slate-200 leading-relaxed max-w-3xl mx-auto font-normal">
-                Government-Registered Training Organization (RTO) and Competency-Based Training & Assessment (CBT&A) Centre under the National Skills Development Authority (NSDA), Prime Minister’s Office, Government of Bangladesh.
+                A Government-Registered Training Organization (RTO) and Competency-Based Training & Assessment (CBT&A) Centre under the National Skills Development Authority (NSDA), Prime Minister’s Office, Government of Bangladesh.
             </p>
 
             <!-- Centered Action Buttons -->
             <div class="flex flex-wrap items-center justify-center gap-4 pt-3">
-
-                <a href="{{ route('home.contact') }}"
+                <a href="{{ route('home.contact') }}" 
                    class="btn-primary-action px-7 py-3.5 rounded-xl font-bold text-sm flex items-center gap-2 shadow-lg">
                     <i class="fa-solid fa-envelope"></i> Contact Us
                 </a>
-
-                <a href="{{ route('home.all_course') }}"
+                <a href="{{ route('home.all_course') }}" 
                    class="px-7 py-3.5 rounded-xl font-bold text-sm bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-xs transition flex items-center gap-2">
                     <i class="fa-solid fa-shapes text-cyan-300"></i> Explore Courses
                 </a>
-
-                <a href="{{ route('home.students') }}"
+                <a href="{{ route('home.students') }}" 
                    class="px-6 py-3.5 rounded-xl font-bold text-sm bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 backdrop-blur-xs transition flex items-center gap-2">
                     <i class="fa-solid fa-award"></i> Verify Certificate
                 </a>
-
             </div>
 
             <!-- Key Figures: Equal Space Between -->
             <div class="pt-8 border-t border-slate-700/60 flex justify-between items-center gap-4 max-w-3xl mx-auto">
-
                 <div class="flex-1 text-center">
                     <p class="text-2xl sm:text-3xl font-black text-white font-heading">39+</p>
                     <p class="text-xs sm:text-sm text-slate-300 font-medium">Years of Legacy</p>
                 </div>
-
                 <div class="flex-1 text-center">
                     <p class="text-2xl sm:text-3xl font-black text-cyan-400 font-heading">18,500+</p>
                     <p class="text-xs sm:text-sm text-slate-300 font-medium">Overseas Placed</p>
                 </div>
-
                 <div class="flex-1 text-center">
                     <p class="text-2xl sm:text-3xl font-black text-amber-400 font-heading">100%</p>
                     <p class="text-xs sm:text-sm text-slate-300 font-medium">Practical Training</p>
                 </div>
-
             </div>
 
         </div>
     </div>
 </section>
 
-
 <!-- =========================================================================
-     2. LATEST NEWS & NOTICE TICKER
+     2. LATEST NEWS & NOTICE TICKER (Direct PDF Download on Click)
      ========================================================================= -->
 @include('frontend.partials.ticker')
 
@@ -97,17 +102,17 @@
                          alt="Asia Technical Training Center Campus" 
                          class="w-full h-[400px] object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#07172c]/80 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-6 left-6 right-6 text-white">
+                    <!-- <div class="absolute bottom-6 left-6 right-6 text-white">
                         <span class="inline-block px-3 py-1 rounded-md text-xs font-bold bg-[#0284c7] mb-2">
-                            RTO Center Code: 50821
+                            149/9-C, Shah Alibag, Mirpur-1, Dhaka
                         </span>
                         <h4 class="text-lg font-bold">149/9-C, Shah Alibag, Mirpur-1, Dhaka</h4>
-                    </div>
+                    </div> -->
                 </div>
 
                 <!-- 39 Years Floating Badge -->
                 <div class="absolute -bottom-6 -right-4 sm:bottom-6 sm:-right-6 bg-[#07172c] text-white p-5 rounded-2xl shadow-2xl border-2 border-amber-400 flex items-center gap-3">
-                    <div class="text-3xl font-black text-amber-400 font-heading">39+</div>
+                    <div class="text-3xl font-black text-amber-400 font-heading">40+</div>
                     <div class="text-xs font-bold leading-tight uppercase tracking-wider text-slate-200">
                         Years Of<br><span class="text-cyan-400">Excellence</span>
                     </div>
@@ -119,7 +124,7 @@
                 <div class="section-label">Welcome To ATTC</div>
                 
                 <h2 class="text-2xl sm:text-4xl font-extrabold text-[#07172c] tracking-tight leading-tight">
-                    Empowering Skilled Craftsmen with <span class="text-[#0284c7]">Global Employment</span>
+                    Empowering Futures Through <span class="text-[#0284c7]">Skills, Education & Innovation</span>
                 </h2>
 
                 <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
@@ -138,15 +143,15 @@
                     </div>
                     <div class="flex items-center gap-2.5 text-sm font-semibold text-slate-800">
                         <i class="fa-solid fa-circle-check text-[#0284c7]"></i>
-                        <span>100% Practical Workshop Lab</span>
+                        <span>Short Courses & RPL Fast-Track Testing</span>
+                    </div>
+                    <div class="flex items-center gap-2.5 text-sm font-semibold text-slate-800">
+                        <i class="fa-solid fa-circle-check text-[#0284c7]"></i>
+                        <span>Govt. Subsidized Free Courses (ASSET)</span>
                     </div>
                     <div class="flex items-center gap-2.5 text-sm font-semibold text-slate-800">
                         <i class="fa-solid fa-circle-check text-[#0284c7]"></i>
                         <span>Direct Overseas Client Interviews</span>
-                    </div>
-                    <div class="flex items-center gap-2.5 text-sm font-semibold text-slate-800">
-                        <i class="fa-solid fa-circle-check text-[#0284c7]"></i>
-                        <span>Safe Hostel & Dining Facility</span>
                     </div>
                 </div>
 
@@ -241,41 +246,190 @@
 </section>
 
 <!-- =========================================================================
-     5. COURSES WE OFFERED (Professional Course Cards)
+     5. COURSES WE OFFERED (Interactive JavaScript Instant Search & Type Tabs)
      ========================================================================= -->
-<section class="py-16 lg:py-20 bg-white">
+<section class="py-16 lg:py-20 bg-white" 
+         x-data="{ 
+            activeTab: 'all',
+            activeCategory: 'all',
+            searchQuery: '',
+            matches(type, pricing, category, name, desc) {
+                const query = this.searchQuery.toLowerCase().trim();
+                const textMatch = !query || name.toLowerCase().includes(query) || desc.toLowerCase().includes(query);
+                if (!textMatch) return false;
+
+                if (this.activeCategory !== 'all' && String(category) !== String(this.activeCategory)) return false;
+
+                if (this.activeTab === 'all') return true;
+                if (this.activeTab === 'short_course') return type === 'short_course';
+                if (this.activeTab === 'rpl') return type === 'rpl';
+                if (this.activeTab === 'free') return pricing === 'free';
+                if (this.activeTab === 'paid') return pricing === 'paid';
+                return true;
+            }
+         }">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
             <div>
                 <div class="section-label">Certified Curriculum</div>
                 <h2 class="text-2xl sm:text-3xl font-extrabold text-[#07172c] mt-2 tracking-tight">
-                    Courses We Offered
+                    Courses & Training Programs
                 </h2>
                 <p class="text-xs sm:text-sm text-slate-500 mt-1">
-                    Government BTEB recognized trade certifications designed for immediate employment.
+                    BTEB recognized Short Courses, RPL Trade Testing, and Government Free Training.
                 </p>
             </div>
-            <a href="{{ route('home.all_course') }}" class="btn-outline-action px-5 py-2.5 rounded-lg text-xs font-bold shrink-0 self-start sm:self-auto flex items-center gap-1.5">
-                <span>View All Courses</span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
-            </a>
+
+            <!-- Instant JavaScript Search Bar -->
+            <div class="relative w-full md:w-80">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-slate-400 text-xs"></i>
+                <input type="text" 
+                       x-model="searchQuery" 
+                       placeholder="Instant search by trade name..." 
+                       class="w-full pl-9 pr-8 py-2 text-xs rounded-xl border border-slate-300 bg-slate-50 focus:bg-white focus:border-[#0284c7] focus:ring-1 focus:ring-[#0284c7] outline-hidden transition">
+                <button x-show="searchQuery.length > 0" @click="searchQuery = ''" class="absolute right-2.5 top-2.5 text-slate-400 hover:text-slate-600 text-xs cursor-pointer">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Course Type & Pricing Tabs (Short Course, RPL, Free, Paid) -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-2 mb-4 scrollbar-none">
+            <button @click="activeTab = 'all'" 
+                    class="px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer"
+                    :class="activeTab === 'all' ? 'bg-[#0284c7] text-white shadow-xs' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'">
+                All Courses ({{ count($featuredCourses) }})
+            </button>
+            <button @click="activeTab = 'short_course'" 
+                    class="px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap flex items-center gap-1.5 cursor-pointer"
+                    :class="activeTab === 'short_course' ? 'bg-[#0284c7] text-white shadow-xs' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'">
+                <i class="fa-solid fa-clock-rotate-left text-xs"></i> Short Courses
+            </button>
+            <button @click="activeTab = 'rpl'" 
+                    class="px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap flex items-center gap-1.5 cursor-pointer"
+                    :class="activeTab === 'rpl' ? 'bg-[#0284c7] text-white shadow-xs' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'">
+                <i class="fa-solid fa-stamp text-xs text-amber-500"></i> RPL (Prior Learning)
+            </button>
+            <button @click="activeTab = 'free'" 
+                    class="px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap flex items-center gap-1.5 cursor-pointer"
+                    :class="activeTab === 'free' ? 'bg-emerald-600 text-white shadow-xs' : 'bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100'">
+                <i class="fa-solid fa-gift text-xs"></i> Free (Govt. Subsidized)
+            </button>
+            <button @click="activeTab = 'paid'" 
+                    class="px-4 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer"
+                    :class="activeTab === 'paid' ? 'bg-[#0284c7] text-white shadow-xs' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'">
+                Paid Professional
+            </button>
+        </div>
+
+        <!-- Category Department Pills (Electrical, English, Civil, Plumbing, Safety, HVAC, etc.) -->
+        
+
+<div class="relative mb-8"
+     x-data="{
+        scrollLeft() {
+            this.$refs.categoryList.scrollBy({ left: -250, behavior: 'smooth' });
+        },
+        scrollRight() {
+            this.$refs.categoryList.scrollBy({ left: 250, behavior: 'smooth' });
+        }
+     }">
+
+    <div class="flex items-center gap-2">
+
+        <!-- Left Arrow -->
+        <button @click="scrollLeft()"
+                class="shrink-0 w-10 h-10 rounded-full bg-white border border-slate-200
+                       shadow-md text-[#07172c] hover:bg-[#07172c]
+                       hover:text-white transition flex items-center justify-center">
+            <i class="fa-solid fa-chevron-left text-xs"></i>
+        </button>
+
+        <!-- Category List -->
+        <div x-ref="categoryList"
+             class="flex-1 min-w-0 flex items-center gap-2 overflow-x-auto
+                    scroll-smooth pb-2 pt-2 scrollbar-none">
+
+            <!-- Trades Label -->
+            <span class="text-[11px] font-black text-slate-400 uppercase
+                         tracking-wider shrink-0 mr-1 flex items-center gap-1">
+                <i class="fa-solid fa-layer-group text-[#0284c7]"></i>
+                Trades:
+            </span>
+
+            <!-- All Trades -->
+            <button @click="activeCategory = 'all'"
+                    class="px-3.5 py-1.5 rounded-lg text-xs font-bold transition
+                           whitespace-nowrap cursor-pointer"
+                    :class="activeCategory === 'all'
+                        ? 'bg-[#07172c] text-white shadow-sm'
+                        : 'bg-slate-100 text-slate-700 hover:bg-slate-200'">
+                All Trades
+            </button>
+
+            <!-- Dynamic Categories -->
+            @foreach(\App\Models\Category::all() as $cat)
+                <button @click="activeCategory = '{{ $cat->id }}'"
+                        class="px-3.5 py-1.5 rounded-lg text-xs font-semibold
+                               transition whitespace-nowrap cursor-pointer"
+                        :class="activeCategory === '{{ $cat->id }}'
+                            ? 'bg-[#07172c] text-white shadow-sm'
+                            : 'bg-slate-100 text-slate-700 hover:bg-slate-200'">
+                    {{ $cat->name }}
+                </button>
+            @endforeach
+
+        </div>
+
+        <!-- Right Arrow -->
+        <button @click="scrollRight()"
+                class="shrink-0 w-10 h-10 rounded-full bg-white border border-slate-200
+                       shadow-md text-[#07172c] hover:bg-[#07172c]
+                       hover:text-white transition flex items-center justify-center">
+            <i class="fa-solid fa-chevron-right text-xs"></i>
+        </button>
+    </div>
+</div>
+
+
+
+        <!-- Course Cards Grid (Instant Client-side Filtered) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             @forelse($featuredCourses as $course)
-                <div class="pro-card overflow-hidden flex flex-col justify-between group">
+                <div x-show="matches('{{ $course->course_type ?? 'short_course' }}', '{{ $course->pricing_type ?? 'paid' }}', '{{ $course->category }}', '{{ addslashes($course->name) }}', '{{ addslashes($course->description ?? '') }}')" 
+                     x-transition:enter="transition ease-out duration-200"
+                     x-transition:enter-start="opacity-0 scale-95"
+                     x-transition:enter-end="opacity-100 scale-100"
+                     class="pro-card overflow-hidden flex flex-col justify-between group">
                     <div>
-                        <!-- Course Image with Duration Badge -->
+                        <!-- Course Image with Badges -->
                         <div class="relative h-44 overflow-hidden bg-slate-100">
-                            <img src="{{ $course->image ? asset($course->image) : 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80' }}" 
+                            <img src="{{ $course->image ? (str_starts_with($course->image, 'http') ? $course->image : asset($course->image)) : 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80' }}" 
                                  alt="{{ $course->name }}" 
                                  class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
                                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80';">
-                            <div class="absolute top-3 left-3 bg-[#07172c]/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-md backdrop-blur-xs flex items-center gap-1">
+                            
+                            <!-- Duration Badge -->
+                            <div class="absolute top-3 left-3 bg-[#07172c]/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-md backdrop-blur-xs flex items-center gap-1 shadow-xs">
                                 <i class="fa-regular fa-clock text-cyan-400"></i> {{ $course->duration ?? '6 month' }}
                             </div>
-                            <div class="absolute top-3 right-3 bg-amber-500 text-slate-950 text-[10px] font-extrabold px-2 py-0.5 rounded shadow-xs uppercase">
-                                {{ $course->bteb_level ?? 'NTVQF Level-2' }}
+
+                            <!-- Course Type & Pricing Tag -->
+                            <div class="absolute top-3 right-3 flex flex-col items-end gap-1">
+                                @if(($course->pricing_type ?? 'paid') === 'free' || (int)($course->Fee ?? 0) === 0)
+                                    <span class="bg-emerald-600 text-white text-[10px] font-black px-2.5 py-0.5 rounded shadow-xs uppercase tracking-wider">
+                                        FREE (Govt)
+                                    </span>
+                                @elseif(($course->course_type ?? 'short_course') === 'rpl')
+                                    <span class="bg-amber-500 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded shadow-xs uppercase tracking-wider">
+                                        RPL Trade
+                                    </span>
+                                @else
+                                    <span class="bg-sky-600 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-xs uppercase tracking-wider">
+                                        Short Course
+                                    </span>
+                                @endif
                             </div>
                         </div>
 
@@ -289,10 +443,16 @@
                             </p>
                             
                             <div class="flex items-center justify-between text-xs py-2 border-t border-slate-100">
-                                <span class="text-slate-400">Course Fee:</span>
-                                <span class="font-extrabold text-[#0284c7] text-sm">
-                                    BDT {{ number_format((float)($course->Fee ?? 20000)) }}
-                                </span>
+                                <span class="text-slate-400 font-medium">Training Fee:</span>
+                                @if(($course->pricing_type ?? 'paid') === 'free' || (int)($course->Fee ?? 0) === 0)
+                                    <span class="font-extrabold text-emerald-600 text-sm">
+                                        100% Free
+                                    </span>
+                                @else
+                                    <span class="font-extrabold text-[#0284c7] text-sm">
+                                        BDT {{ number_format((float)($course->Fee ?? 20000)) }}
+                                    </span>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -314,11 +474,17 @@
             @endforelse
         </div>
 
+        <div class="text-center mt-10">
+            <a href="{{ route('home.all_course') }}" class="btn-outline-action px-6 py-2.5 rounded-lg text-xs font-bold inline-flex items-center gap-2">
+                <span>Browse All Course Details</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+        </div>
+
     </div>
 </section>
 
 <!-- =========================================================================
-     6. OUR FACULTIES & MANAGEMENT (Must be in CARDS as requested!)
+     6. OUR FACULTIES & MANAGEMENT (Fixed for Large Screen Full Proportional Display)
      ========================================================================= -->
 <section class="py-16 lg:py-20 bg-slate-50 border-y border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -335,30 +501,36 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             @forelse($members as $member)
-                <!-- Professional Member Card -->
-                <div class="pro-card overflow-hidden group">
-                    <div class="relative h-64 overflow-hidden bg-slate-200">
-                        <img src="{{ $member->image ? asset($member->image) : 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80' }}" 
+                <!-- Professional Member Card (Proportional Portrait Container for Perfect Large Screen Display) -->
+                <div class="pro-card overflow-hidden group flex flex-col justify-between bg-white rounded-2xl border border-slate-200 shadow-xs hover:shadow-xl transition-all duration-300">
+                    
+                    <!-- Image Frame: aspect-[4/4.5] ensures full head, face, neck & shoulders show on any screen -->
+                    <div class="relative w-full aspect-[4/4.5] sm:h-80 md:h-96 lg:h-[390px] overflow-hidden bg-slate-100">
+                        <img src="{{ $member->image ? (str_starts_with($member->image, 'http') ? $member->image : asset($member->image)) : asset('upload/member/member_1.jpg') }}" 
                              alt="{{ $member->name }}" 
-                             class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-105"
-                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80';">
+                             class="w-full h-full object-cover object-[center_18%] transition-transform duration-500 group-hover:scale-105"
+                             onerror="this.onerror=null; this.src='{{ asset('upload/member/member_1.jpg') }}';">
                         
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 pointer-events-none"></div>
+
                         <!-- Top Designation Badge -->
-                        <div class="absolute top-3 left-3 bg-[#07172c]/90 text-amber-400 font-bold text-[11px] px-3 py-1 rounded-md backdrop-blur-xs shadow-sm">
+                        <div class="absolute top-3 left-3 bg-[#07172c]/95 text-amber-400 font-bold text-[11px] px-3 py-1 rounded-md backdrop-blur-xs shadow-sm border border-amber-400/20">
                             {{ $member->designation }}
                         </div>
                     </div>
 
-                    <div class="p-6 text-center space-y-2">
-                        <h3 class="text-lg font-bold text-[#07172c] font-heading group-hover:text-[#0284c7] transition">
-                            {{ $member->name }}
-                        </h3>
-                        <p class="text-xs font-semibold text-[#0284c7]">
-                            {{ $member->department ?? 'Management' }}
-                        </p>
-                        <p class="text-xs text-slate-500">
-                            <i class="fa-solid fa-graduation-cap text-slate-400 mr-1"></i> {{ $member->education ?? 'Engineering Expert' }}
-                        </p>
+                    <div class="p-6 text-center space-y-2 flex-grow flex flex-col justify-between">
+                        <div class="space-y-1">
+                            <h3 class="text-lg font-bold text-[#07172c] font-heading group-hover:text-[#0284c7] transition">
+                                {{ $member->name }}
+                            </h3>
+                            <p class="text-xs font-semibold text-[#0284c7]">
+                                {{ $member->department ?? 'Management' }}
+                            </p>
+                            <p class="text-xs text-slate-500">
+                                <i class="fa-solid fa-graduation-cap text-slate-400 mr-1"></i> {{ $member->education ?? 'Engineering Expert' }}
+                            </p>
+                        </div>
 
                         <!-- Social / Contact Links -->
                         <div class="pt-4 flex items-center justify-center space-x-2 border-t border-slate-100">
@@ -391,7 +563,7 @@
 </section>
 
 <!-- =========================================================================
-     7. TESTIMONIAL (Must be a SCROLLER / SLIDER with controls as requested!)
+     7. TESTIMONIAL SCROLLER (Zero Error, Ultra-Smooth Carousel Slider)
      ========================================================================= -->
 <section class="py-16 lg:py-20 bg-white" 
          x-data="{ 
@@ -399,12 +571,16 @@
             totalSlides: {{ count($testimonials) > 0 ? count($testimonials) : 1 }},
             timer: null,
             startAutoplay() {
+                if (this.totalSlides <= 1) return;
                 this.timer = setInterval(() => {
                     this.next();
                 }, 4500);
             },
             stopAutoplay() {
-                if (this.timer) clearInterval(this.timer);
+                if (this.timer) {
+                    clearInterval(this.timer);
+                    this.timer = null;
+                }
             },
             next() {
                 this.activeSlide = (this.activeSlide + 1) % this.totalSlides;
@@ -428,58 +604,54 @@
             </p>
         </div>
 
-        <!-- Scroller Container -->
-        <div class="relative bg-gradient-to-br from-slate-50 to-sky-50/50 rounded-2xl border border-slate-200 p-8 sm:p-12 shadow-sm min-h-[280px] flex items-center">
+        <!-- Carousel Frame -->
+        <div class="relative bg-gradient-to-br from-slate-50 to-sky-50/50 rounded-2xl border border-slate-200 p-8 sm:p-12 shadow-sm min-h-[260px] overflow-hidden">
             
-            <!-- Big Decorative Quote Icon -->
+            <!-- Decorative Quote Icon -->
             <div class="absolute top-6 right-8 text-sky-200 text-6xl pointer-events-none select-none font-serif opacity-60">
                 “
             </div>
 
-            <!-- Slides Wrapper -->
-            <div class="w-full">
-                @forelse($testimonials as $idx => $t)
-                    <div x-show="activeSlide === {{ $idx }}" 
-                         x-transition:enter="transition ease-out duration-300"
-                         x-transition:enter-start="opacity-0 translate-x-4"
-                         x-transition:enter-end="opacity-100 translate-x-0"
-                         x-transition:leave="transition ease-in duration-200"
-                         x-transition:leave-start="opacity-100 translate-x-0"
-                         x-transition:leave-end="opacity-0 -translate-x-4"
-                         class="space-y-6">
-                        
-                        <!-- Quote Content -->
-                        <p class="text-sm sm:text-base text-slate-700 italic leading-relaxed">
-                            "{{ $t->quote }}"
-                        </p>
+            <!-- Continuous Horizontal Track (Zero Layout Shift) -->
+            <div class="w-full overflow-hidden">
+                <div class="flex transition-transform duration-500 ease-in-out" 
+                     :style="'transform: translateX(-' + (activeSlide * 100) + '%)'">
+                    @forelse($testimonials as $idx => $t)
+                        <div class="w-full shrink-0 space-y-6">
+                            
+                            <!-- Quote Content -->
+                            <p class="text-sm sm:text-base text-slate-700 italic leading-relaxed pr-6">
+                                "{{ $t->quote }}"
+                            </p>
 
-                        <!-- Student Details -->
-                        <div class="flex items-center gap-4 pt-4 border-t border-slate-200">
-                            <div class="w-12 h-12 rounded-full bg-[#0284c7] text-white flex items-center justify-center font-bold text-lg shadow-sm">
-                                {{ strtoupper(substr($t->name, 0, 1)) }}
+                            <!-- Student Details -->
+                            <div class="flex items-center gap-4 pt-4 border-t border-slate-200">
+                                <div class="w-12 h-12 rounded-full bg-[#0284c7] text-white flex items-center justify-center font-bold text-lg shadow-sm shrink-0">
+                                    {{ strtoupper(substr($t->name, 0, 1)) }}
+                                </div>
+                                <div>
+                                    <h4 class="text-base font-bold text-[#07172c] font-heading">{{ $t->name }}</h4>
+                                    <p class="text-xs font-semibold text-[#0284c7]">{{ $t->trade }}</p>
+                                    <p class="text-[11px] text-slate-400">{{ $t->batch }}</p>
+                                </div>
                             </div>
-                            <div>
-                                <h4 class="text-base font-bold text-[#07172c] font-heading">{{ $t->name }}</h4>
-                                <p class="text-xs font-semibold text-[#0284c7]">{{ $t->trade }}</p>
-                                <p class="text-[11px] text-slate-400">{{ $t->batch }}</p>
-                            </div>
+
                         </div>
-
-                    </div>
-                @empty
-                    <div class="text-center py-8 text-slate-500">
-                        Testimonials will be added soon.
-                    </div>
-                @endforelse
+                    @empty
+                        <div class="w-full shrink-0 text-center py-8 text-slate-500">
+                            Testimonials will be added soon.
+                        </div>
+                    @endforelse
+                </div>
             </div>
 
             <!-- Prev / Next Controls -->
             <button @click="prev()" 
-                    class="absolute -left-4 sm:-left-5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border border-slate-200 shadow-md text-slate-700 hover:text-[#0284c7] hover:border-[#0284c7] flex items-center justify-center transition focus:outline-hidden">
+                    class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white border border-slate-200 shadow-md text-slate-700 hover:text-[#0284c7] hover:border-[#0284c7] flex items-center justify-center transition focus:outline-hidden z-10">
                 <i class="fa-solid fa-chevron-left text-xs"></i>
             </button>
             <button @click="next()" 
-                    class="absolute -right-4 sm:-right-5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white border border-slate-200 shadow-md text-slate-700 hover:text-[#0284c7] hover:border-[#0284c7] flex items-center justify-center transition focus:outline-hidden">
+                    class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white border border-slate-200 shadow-md text-slate-700 hover:text-[#0284c7] hover:border-[#0284c7] flex items-center justify-center transition focus:outline-hidden z-10">
                 <i class="fa-solid fa-chevron-right text-xs"></i>
             </button>
 
@@ -498,7 +670,7 @@
 </section>
 
 <!-- =========================================================================
-     8. OVERSEAS PARTNERS (Must scroll infinity & uniform same size logos as requested!)
+     8. OVERSEAS PARTNERS (Only PNG Logos with Uniform Normalized Boxes)
      ========================================================================= -->
 <section class="py-16 bg-[#07172c] text-white overflow-hidden border-t border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
@@ -513,179 +685,133 @@
         </p>
     </div>
 
-    <!-- Infinite Scrolling Marquee with Uniform Normalized Logo Boxes -->
-    
-<div class="relative w-full overflow-hidden py-6">
+    <!-- Infinite Scrolling Marquee with Strictly PNG Logos -->
+    <div class="relative w-full overflow-hidden py-6">
+        <div class="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#07172c] to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[#07172c] to-transparent z-10 pointer-events-none"></div>
 
-    <!-- Edge Fade -->
-    <div class="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-    <div class="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+        @php
+            $pngPartners = [
+                ['name' => 'Saudi Aramco EPC', 'image' => 'upload/partners/pic3.png'],
+                ['name' => 'Dubai Drydocks World', 'image' => 'upload/partners/pic4.png'],
+                ['name' => 'Qatar Energy Contractors', 'image' => 'upload/partners/pic2.png'],
+                ['name' => 'Sobha Construction LLC', 'image' => 'upload/partners/pic1.png'],
+                ['name' => 'Saudi Aramco EPC', 'image' => 'upload/partners/pic3.png'],
+                ['name' => 'Dubai Drydocks World', 'image' => 'upload/partners/pic4.png'],
+                ['name' => 'Qatar Energy Contractors', 'image' => 'upload/partners/pic2.png'],
+                ['name' => 'Sobha Construction LLC', 'image' => 'upload/partners/pic1.png'],
+            ];
+        @endphp
 
-    @php
-        $partners = [
-            ['name' => 'Saudi Aramco EPC', 'image' => 'upload/partners/pic3.png'],
-            ['name' => 'Dubai Drydocks World', 'image' => 'upload/partners/pic4.png'],
-            ['name' => 'Qatar Energy Contractors', 'image' => 'upload/partners/pic2.png'],
-            ['name' => 'Sobha Construction LLC', 'image' => 'upload/partners/pic1.jpg'],
-            ['name' => 'Saudi Aramco EPC', 'image' => 'upload/partners/pic3.png'],
-            ['name' => 'Dubai Drydocks World', 'image' => 'upload/partners/pic4.png'],
-            ['name' => 'Qatar Energy Contractors', 'image' => 'upload/partners/pic2.png'],
-            ['name' => 'Sobha Construction LLC', 'image' => 'upload/partners/pic1.jpg'],
-        ];
-    @endphp
-
-    <div class="animate-infinite-scroll flex items-center gap-12 w-max">
-
-        @foreach(array_merge($partners, $partners) as $partner)
-            <div class="group relative shrink-0 w-40 h-24 flex items-center justify-center cursor-pointer">
-
-                <!-- Partner Logo -->
-                <img
-                    src="{{ asset($partner['image']) }}"
-                    alt="{{ $partner['name'] }}"
-                    title="{{ $partner['name'] }}"
-                    class="w-full h-full object-contain transition-all duration-300 group-hover:scale-110"
-                    loading="lazy"
-                >
-
-                <!-- Hover Name -->
-                <div class="absolute -bottom-9 left-1/2 -translate-x-1/2
-                            whitespace-nowrap px-3 py-1.5 rounded-lg
-                            bg-[#07172c] text-white text-xs font-semibold
-                            opacity-0 invisible group-hover:opacity-100
-                            group-hover:visible transition-all duration-300
-                            shadow-lg z-20 pointer-events-none">
-                    {{ $partner['name'] }}
+        <div class="animate-infinite-scroll flex items-center gap-8 w-max">
+            @foreach(array_merge($pngPartners, $pngPartners) as $partner)
+                <div class="shrink-0 w-48 h-24 bg-white rounded-xl shadow-md border border-slate-200 flex items-center justify-center p-3.5 transition transform hover:scale-105 group relative cursor-pointer">
+                    <img src="{{ asset($partner['image']) }}" 
+                         alt="{{ $partner['name'] }}" 
+                         title="{{ $partner['name'] }}"
+                         class="max-h-12 max-w-[130px] w-auto h-auto object-contain mx-auto"
+                         loading="lazy">
+                    
+                    <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap px-2.5 py-1 rounded-md bg-[#07172c] text-white text-[10px] font-semibold opacity-0 invisible group-hover:opacity-100 group-hover:visible transition shadow-lg z-20 pointer-events-none">
+                        {{ $partner['name'] }}
+                    </div>
                 </div>
-
-            </div>
-        @endforeach
-
+            @endforeach
+        </div>
     </div>
-</div>
-
 </section>
 
 <!-- =========================================================================
      9. EVENTS & LATEST NOTICES
      ========================================================================= -->
-
-<!-- ================= RECENT EVENTS SECTION ================= -->
 <section class="py-16 lg:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            
+            <!-- Left: Recent Events (7 cols) -->
+            <div class="lg:col-span-7 space-y-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <div class="section-label">Campus Activities</div>
+                        <h2 class="text-xl sm:text-2xl font-extrabold text-[#07172c] mt-1 font-heading">
+                            Recent Events & Delegations
+                        </h2>
+                    </div>
+                    <a href="{{ route('home.event') }}" class="text-xs font-bold text-[#0284c7] hover:underline">
+                        All Events <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
 
-        <div class="flex items-center justify-between mb-8">
-            <div>
-                <div class="section-label">Campus Activities</div>
-                <h2 class="text-xl sm:text-2xl font-extrabold text-[#07172c] mt-1 font-heading">
-                    Recent Events & Delegations
-                </h2>
+                <div class="space-y-4">
+                    @forelse($events as $event)
+                        <div class="pro-card p-4 sm:p-5 flex flex-col sm:flex-row gap-4 items-center">
+                            <div class="w-full sm:w-36 h-28 rounded-xl overflow-hidden bg-slate-100 shrink-0">
+                                <img src="{{ $event->image ? (str_starts_with($event->image, 'http') ? $event->image : asset($event->image)) : 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80' }}" 
+                                     alt="{{ $event->title }}" 
+                                     class="w-full h-full object-cover"
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80';">
+                            </div>
+                            <div class="flex-grow space-y-1.5 text-center sm:text-left">
+                                <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-sky-50 text-[#0284c7]">
+                                    <i class="fa-regular fa-calendar-days mr-1"></i> {{ $event->date }}
+                                </span>
+                                <h3 class="text-sm font-bold text-[#07172c] line-clamp-2 hover:text-[#0284c7] transition">
+                                    <a href="{{ route('home.event_details', $event->id) }}">{{ $event->title }}</a>
+                                </h3>
+                                <p class="text-xs text-slate-500 line-clamp-2">
+                                    {{ $event->description }}
+                                </p>
+                            </div>
+                        </div>
+                    @empty
+                        <p class="text-xs text-slate-500">No events listed currently.</p>
+                    @endforelse
+                </div>
             </div>
 
-            <a href="{{ route('home.event') }}"
-               class="text-xs font-bold text-[#0284c7] hover:underline">
-                All Events <i class="fa-solid fa-arrow-right text-[10px]"></i>
-            </a>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            @forelse($events as $event)
-
-                <div class="pro-card overflow-hidden rounded-2xl group">
-
-                    <div class="w-full h-48 overflow-hidden bg-slate-100">
-                        <img src="{{ $event->image ? asset($event->image) : 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80' }}"
-                             alt="{{ $event->title }}"
-                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80';">
+            <!-- Right: Notice Board (5 cols) -->
+            <div class="lg:col-span-5 space-y-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <div class="section-label">Official Bulletins</div>
+                        <h2 class="text-xl sm:text-2xl font-extrabold text-[#07172c] mt-1 font-heading">
+                            Notice Board
+                        </h2>
                     </div>
+                    <a href="{{ route('home.notice') }}" class="text-xs font-bold text-[#0284c7] hover:underline">
+                        View All <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
 
-                    <div class="p-5 space-y-2">
-                        <span class="inline-block px-2 py-1 rounded text-[10px] font-bold bg-sky-50 text-[#0284c7]">
-                            <i class="fa-regular fa-calendar-days mr-1"></i>
-                            {{ $event->date }}
-                        </span>
-
-                        <h3 class="text-base font-bold text-[#07172c] line-clamp-2 group-hover:text-[#0284c7] transition">
-                            <a href="{{ route('home.event_details', $event->id) }}">
-                                {{ $event->title }}
+                <div class="bg-slate-50 rounded-2xl border border-slate-200 p-4 space-y-3">
+                    @forelse($notices as $notice)
+                        <div class="p-3 bg-white rounded-xl border border-slate-100 shadow-2xs hover:border-sky-300 transition flex items-center justify-between gap-3">
+                            <div class="flex-grow">
+                                <div class="flex items-center gap-2 text-[10px] text-slate-400 mb-1">
+                                    <span class="px-2 py-0.5 rounded font-bold bg-amber-50 text-amber-700 border border-amber-200">
+                                        {{ $notice->badge ?? 'Notice' }}
+                                    </span>
+                                    <span><i class="fa-regular fa-calendar mr-1"></i> {{ $notice->date }}</span>
+                                </div>
+                                <h4 class="text-xs font-bold text-slate-800 line-clamp-2 hover:text-[#0284c7] transition">
+                                    <a href="{{ route('home.notice_download', $notice->id) }}" title="Click to Download PDF">{{ $notice->title }}</a>
+                                </h4>
+                            </div>
+                            <a href="{{ route('home.notice_download', $notice->id) }}" 
+                               title="Download PDF" 
+                               class="w-8 h-8 rounded-lg bg-rose-50 text-rose-600 hover:bg-rose-600 hover:text-white flex items-center justify-center transition shrink-0">
+                                <i class="fa-solid fa-file-pdf text-xs"></i>
                             </a>
-                        </h3>
-
-                        <p class="text-sm text-slate-500 line-clamp-3">
-                            {{ $event->description }}
-                        </p>
-
-                        <a href="{{ route('home.event_details', $event->id) }}"
-                           class="inline-flex items-center gap-2 text-xs font-bold text-[#0284c7] pt-2">
-                            Read More <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-
+                        </div>
+                    @empty
+                        <p class="text-xs text-slate-500 text-center py-4">No notices published.</p>
+                    @endforelse
                 </div>
-
-            @empty
-                <p class="text-sm text-slate-500">No events listed currently.</p>
-            @endforelse
-        </div>
-
-    </div>
-</section>
-
-
-<!-- ================= NOTICE BOARD SECTION ================= -->
-<section class="py-16 lg:py-20 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <div class="flex items-center justify-between mb-8">
-            <div>
-                <div class="section-label">Official Bulletins</div>
-                <h2 class="text-xl sm:text-2xl font-extrabold text-[#07172c] mt-1 font-heading">
-                    Notice Board
-                </h2>
             </div>
 
-            <a href="{{ route('home.notice') }}"
-               class="text-xs font-bold text-[#0284c7] hover:underline">
-                View All <i class="fa-solid fa-arrow-right text-[10px]"></i>
-            </a>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-
-            @forelse($notices as $notice)
-
-                <div class="p-5 bg-white rounded-xl border border-slate-200 shadow-sm hover:border-sky-300 hover:shadow-md transition">
-
-                    <div class="flex items-center justify-between gap-2 text-[10px] text-slate-400 mb-3">
-                        <span class="px-2 py-1 rounded font-bold bg-amber-50 text-amber-700 border border-amber-200">
-                            {{ $notice->badge ?? 'Notice' }}
-                        </span>
-
-                        <span>
-                            <i class="fa-regular fa-calendar mr-1"></i>
-                            {{ $notice->date }}
-                        </span>
-                    </div>
-
-                    <h4 class="text-sm font-bold text-slate-800 line-clamp-2 hover:text-[#0284c7] transition">
-                        <a href="{{ route('home.notice') }}">
-                            {{ $notice->title }}
-                        </a>
-                    </h4>
-
-                </div>
-
-            @empty
-                <p class="text-sm text-slate-500">No notices published.</p>
-            @endforelse
-
-        </div>
-
     </div>
 </section>
-
-
 
 <!-- =========================================================================
      10. QUICK ADMISSION APPLICATION / INQUIRY BANNER
@@ -731,6 +857,8 @@
                                 <option value="Plumbing & Pipe Fitting">Plumbing & Pipe Fitting</option>
                                 <option value="Basic Electrical">Basic Electrical (House Wiring)</option>
                                 <option value="Electrical & Electronics">Electrical & Electronics</option>
+                                <option value="RPL Electrical Installation">RPL Electrical Installation</option>
+                                <option value="Free Electrical Trade (Govt. ASSET)">Free Electrical Trade (Govt. ASSET)</option>
                             </select>
                         </div>
                         <div>

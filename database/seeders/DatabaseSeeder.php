@@ -84,16 +84,23 @@ class DatabaseSeeder extends Seeder
         // 4. Categories
         $catCivil = Category::updateOrCreate(['id' => 1], ['name' => 'Civil Construction', 'image' => 'https://images.unsplash.com/photo-1541888946425-d0fbb1862448?auto=format&fit=crop&w=800&q=80']);
         $catPlumbing = Category::updateOrCreate(['id' => 2], ['name' => 'Plumbing & Pipe Fitting', 'image' => 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=800&q=80']);
-        $catElectrical = Category::updateOrCreate(['id' => 3], ['name' => 'Electrical', 'image' => 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80']);
+        $catElectrical = Category::updateOrCreate(['id' => 3], ['name' => 'Electrical & Electronics', 'image' => 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80']);
+        $catEnglish = Category::updateOrCreate(['id' => 4], ['name' => 'English Language & Communication', 'image' => 'https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=800&q=80']);
+        $catSafety = Category::updateOrCreate(['id' => 5], ['name' => 'Industrial Safety & HSE', 'image' => 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80']);
+        $catHvac = Category::updateOrCreate(['id' => 6], ['name' => 'HVAC & Refrigeration', 'image' => 'https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=800&q=80']);
 
-        // 5. Courses (Exact from video)
+        // 5. Courses (Short Courses, RPL, Free & Paid Types)
         Course::truncate();
+        
+        // --- 1. Short Courses (Paid) ---
         Course::create([
             'name' => 'Rod Binder',
             'category' => (string) $catCivil->id,
             'duration' => '6 month',
             'Fee' => '20000',
             'bteb_level' => 'NTVQF Level-2',
+            'course_type' => 'short_course',
+            'pricing_type' => 'paid',
             'image' => 'https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80',
             'description' => 'Comprehensive practical course on bar bending, rebar fixing, steel reinforcement for civil construction projects.',
             'syllabus' => "1. Basic Civil Construction Safety\n2. Rebar Bending & Cutting Techniques\n3. Beam, Column & Slab Reinforcement\n4. Drawing & Bar Bending Schedule (BBS)",
@@ -102,11 +109,13 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Course::create([
-            'name' => 'Plumbing',
+            'name' => 'Plumbing & Pipe Fitting',
             'category' => (string) $catPlumbing->id,
             'duration' => '6 month',
-            'Fee' => '40000',
+            'Fee' => '35000',
             'bteb_level' => 'NTVQF Level-2',
+            'course_type' => 'short_course',
+            'pricing_type' => 'paid',
             'image' => 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=800&q=80',
             'description' => 'Modern sanitary, piping and drainage installation training for domestic and commercial infrastructure.',
             'syllabus' => "1. Plumbing Tools & Safety\n2. PPR, PVC & CPVC Pipe Joining\n3. Sanitary Fitting & Fixture Installation\n4. Water Line Pressure Testing & Drainage Layout",
@@ -118,8 +127,10 @@ class DatabaseSeeder extends Seeder
             'name' => 'Basic Electrical',
             'category' => (string) $catElectrical->id,
             'duration' => '4 month',
-            'Fee' => '20000',
+            'Fee' => '18000',
             'bteb_level' => 'NTVQF Level-2',
+            'course_type' => 'short_course',
+            'pricing_type' => 'paid',
             'image' => 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80',
             'description' => 'Fundamental electrical training covering house wiring, circuit breakers, and single-phase electrical maintenance.',
             'syllabus' => "1st Month: Basic Knowledge\n2nd Month: House Wiring\n3rd Month: Circuit Breakers & DB Dressing\n4th Month: Domestic Load Distribution & Testing",
@@ -128,15 +139,140 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Course::create([
-            'name' => 'Electrical & Electronis',
+            'name' => 'Electrical & Electronics',
             'category' => (string) $catElectrical->id,
             'duration' => '6 month',
-            'Fee' => '20000',
+            'Fee' => '22000',
             'bteb_level' => 'NTVQF Level-3',
+            'course_type' => 'short_course',
+            'pricing_type' => 'paid',
             'image' => 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80',
             'description' => 'Advanced industrial electrical systems, motor rewinding, magnetic contactor wiring, and industrial safety controls.',
             'syllabus' => "1st Month: Basic Knowledge\n2nd Month: House Wiring\n3rd Month: Motor Rewinding\n4th-6th Month: Industrial Wiring & Motor Starter Controlling Circuit",
             'careers' => 'Industrial Electrician, Substation Operator, Motor Technician',
+            'status' => 'active',
+        ]);
+
+        // --- 2. RPL (Recognition of Prior Learning) Courses ---
+        Course::create([
+            'name' => 'RPL Electrical Installation & Maintenance',
+            'category' => (string) $catElectrical->id,
+            'duration' => '1-2 Weeks Assessment',
+            'Fee' => '8000',
+            'bteb_level' => 'NTVQF Level-2 RPL',
+            'course_type' => 'rpl',
+            'pricing_type' => 'paid',
+            'image' => 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80',
+            'description' => 'Government certified RPL assessment for experienced electricians seeking formal BTEB NTVQF Level-2 trade certificate for overseas visas.',
+            'syllabus' => "1. Portfolio Assessment & Prior Experience Evaluation\n2. Direct Practical Competency Testing\n3. Oral & Safety Knowledge Assessment\n4. BTEB Official National Certificate Issuance",
+            'careers' => 'Certified Master Electrician, Overseas Technical Specialist',
+            'status' => 'active',
+        ]);
+
+        Course::create([
+            'name' => 'RPL Plumbing & Sanitary Assessment',
+            'category' => (string) $catPlumbing->id,
+            'duration' => '1-2 Weeks Assessment',
+            'Fee' => '8000',
+            'bteb_level' => 'NTVQF Level-2 RPL',
+            'course_type' => 'rpl',
+            'pricing_type' => 'paid',
+            'image' => 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=800&q=80',
+            'description' => 'Direct BTEB recognition of prior learning for working plumbers. Get certified without full-length classes.',
+            'syllabus' => "1. Trade Verification & Tool Handling Test\n2. Pressure Testing and Piping Standards\n3. Occupational Health and Safety Protocols\n4. Final National Competency Certification",
+            'careers' => 'Licensed Plumber, Plumbing Contractor, Overseas MEP Technician',
+            'status' => 'active',
+        ]);
+
+        Course::create([
+            'name' => 'RPL Steel Fixing & Bar Bending',
+            'category' => (string) $catCivil->id,
+            'duration' => '1-2 Weeks Assessment',
+            'Fee' => '7500',
+            'bteb_level' => 'NTVQF Level-2 RPL',
+            'course_type' => 'rpl',
+            'pricing_type' => 'paid',
+            'image' => 'https://images.unsplash.com/photo-1541888946425-d0fbb1862448?auto=format&fit=crop&w=800&q=80',
+            'description' => 'RPL certification for existing construction site rebar workers seeking national credential for Gulf recruitment.',
+            'syllabus' => "1. BBS Drawing Interpretation Assessment\n2. Rebar Bending & Tying Competency Demonstration\n3. Scaffold & High-Altitude Safety Verification\n4. BTEB Government Certificate Endorsement",
+            'careers' => 'Certified Steel Fixer, Construction Foreman, Site Supervisor',
+            'status' => 'active',
+        ]);
+
+        // --- 3. Free Courses (Govt. Subsidized / ASSET Project) ---
+        Course::create([
+            'name' => 'Free Electrical Trade (Govt. ASSET Project)',
+            'category' => (string) $catElectrical->id,
+            'duration' => '3 month',
+            'Fee' => '0',
+            'bteb_level' => 'NTVQF Level-2 (Free)',
+            'course_type' => 'short_course',
+            'pricing_type' => 'free',
+            'image' => 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80',
+            'description' => '100% Government funded skill training under the World Bank & ASSET Project with free hostel, uniforms, and monthly allowance.',
+            'syllabus' => "1. Full Electrical Safety & Basic Electronics\n2. Domestic and Commercial Wiring Mastery\n3. Motor Controls & Industrial Starters\n4. Free Assessment and Guaranteed Placement Assistance",
+            'careers' => 'Certified Electrician, Govt Project Technician',
+            'status' => 'active',
+        ]);
+
+        Course::create([
+            'name' => 'Free Plumbing & Sanitation (NSDA Funded)',
+            'category' => (string) $catPlumbing->id,
+            'duration' => '3 month',
+            'Fee' => '0',
+            'bteb_level' => 'NTVQF Level-2 (Free)',
+            'course_type' => 'short_course',
+            'pricing_type' => 'free',
+            'image' => 'https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80',
+            'description' => 'Fully subsidized technical training supported by National Skills Development Authority (NSDA) for eligible youth with job guarantee.',
+            'syllabus' => "1. Complete Modern Sanitary Installation\n2. Industrial Piping and Jointing\n3. Water Supply and Firefighting Plumbing\n4. Free Trade Test and Certificate",
+            'careers' => 'Certified Pipe Fitter, Plumbing Technician',
+            'status' => 'active',
+        ]);
+
+        // --- English Courses ---
+        Course::create([
+            'name' => 'Spoken English & Workplace Communication',
+            'category' => (string) $catEnglish->id,
+            'duration' => '3 month',
+            'Fee' => '12000',
+            'bteb_level' => 'Vocational Language Level-1',
+            'course_type' => 'short_course',
+            'pricing_type' => 'paid',
+            'image' => 'https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=800&q=80',
+            'description' => 'Specialized English language course for technical workers, foreign job interviews, overseas workplace communication, and site safety commands.',
+            'syllabus' => "1. Everyday English & Self Introduction\n2. Job Interview Speaking & Mock Client Sessions\n3. Workshop Safety Commands & Technical Vocabulary\n4. Listening Comprehension & Workplace Communication",
+            'careers' => 'Overseas Technical Specialist, Bilingual Site Supervisor, Global Technician',
+            'status' => 'active',
+        ]);
+
+        Course::create([
+            'name' => 'Free Pre-departure English & Etiquette (Govt. Subsidized)',
+            'category' => (string) $catEnglish->id,
+            'duration' => '1 month',
+            'Fee' => '0',
+            'bteb_level' => 'Govt. Subsidized',
+            'course_type' => 'short_course',
+            'pricing_type' => 'free',
+            'image' => 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80',
+            'description' => '100% Free pre-departure English training and international workplace etiquette for migrant workers traveling abroad for employment.',
+            'syllabus' => "1. Pre-departure Orientation & Cultural Etiquette\n2. Basic English Speaking for Workplace\n3. Airport, Immigration & Healthcare Communication\n4. Emergency Signs & Safety Protocols",
+            'careers' => 'Certified Overseas Worker',
+            'status' => 'active',
+        ]);
+
+        Course::create([
+            'name' => 'RPL English Communication Assessment',
+            'category' => (string) $catEnglish->id,
+            'duration' => '1 Week Assessment',
+            'Fee' => '6000',
+            'bteb_level' => 'RPL Certification',
+            'course_type' => 'rpl',
+            'pricing_type' => 'paid',
+            'image' => 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80',
+            'description' => 'Direct evaluation of spoken and functional English skills for candidates seeking language proficiency certificates for overseas work visas.',
+            'syllabus' => "1. Speaking Fluency Assessment\n2. Listening & Understanding Test\n3. Technical Reading & Comprehension\n4. Formal BTEB/Institutional Language Certificate",
+            'careers' => 'Certified English Communicator',
             'status' => 'active',
         ]);
 
@@ -173,7 +309,7 @@ class DatabaseSeeder extends Seeder
             'designation' => 'CEO',
             'education' => 'Diploma in Engineering',
             'department' => 'Principle',
-            'image' => 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80',
+            'image' => '/upload/member/member_1.jpg',
         ]);
 
         Member::create([
@@ -181,7 +317,7 @@ class DatabaseSeeder extends Seeder
             'designation' => 'Senior Instructor & Manager',
             'education' => 'B.Sc in Engineering',
             'department' => 'Senior Instructor & Manager',
-            'image' => 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80',
+            'image' => '/upload/member/member_2.jpg',
         ]);
 
         Member::create([
@@ -189,7 +325,7 @@ class DatabaseSeeder extends Seeder
             'designation' => 'Senior Instructor & Manager',
             'education' => 'B.Sc in Engineering',
             'department' => 'Senior Instructor & Manager',
-            'image' => 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=500&q=80',
+            'image' => '/upload/member/member_3.jpg',
         ]);
 
         // 8. Testimonials (from video)

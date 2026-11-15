@@ -28,15 +28,15 @@ class HomeController extends Controller
         $setting = Setting::first();
         $about = About::first();
         $categories = Category::withCount('courses')->get();
-        $featuredCourses = Course::where('status', '1')->orWhere('status', 'active')->latest()->take(6)->get();
+        $featuredCourses = Course::where('status', '1')->orWhere('status', 'active')->latest()->get();
         $services = Service::where('status', '1')->orWhere('status', 'active')->take(4)->get();
         $notices = Notice::latest()->take(5)->get();
-        $events = Event::latest()->take(2)->get();
+        $events = Event::latest()->take(3)->get();
         $testimonials = Testimonial::latest()->take(6)->get();
         $galleries = Gallery::latest()->take(8)->get();
         $circulars = JobCircular::where('status', '1')->orWhere('status', 'active')->latest()->take(3)->get();
         $interviews = Interview::latest()->take(3)->get();
-        $members = Member::take(4)->get();
+        $members = Member::take(6)->get();
 
         return view('frontend.pages.index', compact(
             'setting',
@@ -55,24 +55,13 @@ class HomeController extends Controller
     }
 
     /**
-     * All Courses Page with optional Category filter and Search
+     * All Courses Page with Category filter, Course Type (Short Course, RPL), Pricing (Free, Paid) and Instant Search
      */
     public function all_course(Request $request)
     {
         $setting = Setting::first();
         $categories = Category::all();
-        $query = Course::query();
-
-        if ($request->filled('category')) {
-            $query->where('category', $request->category);
-        }
-
-        if ($request->filled('search')) {
-            $query->where('name', 'like', '%' . $request->search . '%')
-                  ->orWhere('description', 'like', '%' . $request->search . '%');
-        }
-
-        $courses = $query->latest()->paginate(9)->withQueryString();
+        $courses = Course::latest()->paginate(9)->withQueryString();
 
         return view('frontend.pages.all_course', compact('setting', 'categories', 'courses'));
     }
@@ -94,13 +83,13 @@ class HomeController extends Controller
     }
 
     /**
-     * Category Details Page
+     * Category Details Page (Shows unified curriculum interface initialized to selected category)
      */
     public function course_category_details($id)
     {
         $setting = Setting::first();
         $category = Category::findOrFail($id);
-        $courses = Course::where('category', $id)->latest()->paginate(9);
+        $courses = Course::latest()->get();
         $categories = Category::all();
 
         return view('frontend.pages.course_category_details', compact('setting', 'category', 'courses', 'categories'));
@@ -246,6 +235,29 @@ class HomeController extends Controller
         $notices = Notice::latest()->paginate(10);
 
         return view('frontend.pages.notice', compact('setting', 'notices'));
+    }
+
+    /**
+     * Download Notice in PDF Format
+     */
+    public function notice_download($id)
+    {
+        $notice = Notice::findOrFail($id);
+
+        if ($notice->file && file_exists(public_path($notice->file))) {
+            return response()->download(public_path($notice->file), 'ATTC-Notice-' . $notice->id . '.pdf', [
+                'Content-Type' => 'application/pdf',
+            ]);
+        }
+
+        $fallbackPath = public_path('upload/notices/notice_' . $notice->id . '.pdf');
+        if (file_exists($fallbackPath)) {
+            return response()->download($fallbackPath, 'ATTC-Notice-' . $notice->id . '.pdf', [
+                'Content-Type' => 'application/pdf',
+            ]);
+        }
+
+        return redirect()->route('home.notice')->with('error', 'Notice document is being archived.');
     }
 
     /**
