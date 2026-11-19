@@ -224,7 +224,7 @@
                 <a href="{{ route('home.students') }}" 
                    class="px-3.5 py-2 text-xs font-bold rounded-lg border border-slate-300 text-slate-700 hover:text-[#0284c7] hover:border-[#0284c7] hover:bg-sky-50 transition flex items-center gap-1.5 shadow-2xs">
                     <i class="fa-solid fa-award text-amber-600"></i>
-                    <span>Verify Certificate</span>
+                    <span>Admission</span>
                 </a>
             </div>
 
@@ -256,8 +256,8 @@
         </a>
         
         <div class="py-1">
-            <p class="px-3 text-[11px] font-bold text-slate-400 uppercase tracking-wider">About Institute</p>
-            <a href="{{ route('home.about_us') }}" class="block px-3 py-1.5 text-sm text-slate-600 hover:text-[#0284c7]">Overview (39 Years)</a>
+            <p class="px-3 text-[11px] font-bold text-slate-400 uppercase tracking-wider">About</p>
+            <a href="{{ route('home.about_us') }}" class="block px-3 py-1.5 text-sm text-slate-600 hover:text-[#0284c7]">Overview (40+ Years)</a>
             <a href="{{ route('home.mission') }}" class="block px-3 py-1.5 text-sm text-slate-600 hover:text-[#0284c7]">Mission & Vision</a>
             <a href="{{ route('home.teachers') }}" class="block px-3 py-1.5 text-sm text-slate-600 hover:text-[#0284c7]">Faculties & Management</a>
         </div>
@@ -331,10 +331,10 @@
             Contact Us
         </a>
 
-        <!-- <div class="pt-3 border-t border-slate-200 grid grid-cols-2 gap-2">
+        <div class="pt-3 border-t border-slate-200 grid grid-cols-2 gap-2">
             <a href="{{ route('home.students') }}" class="w-full text-center py-2 text-xs font-bold rounded-lg border border-slate-300 text-slate-700 bg-slate-50">
-                <i class="fa-solid fa-award text-amber-500 mr-1"></i> Verify Certificate
+                <i class="fa-solid fa-award text-amber-500 mr-1"></i> Admission
             </a>
-        </div> -->
+        </div>
     </div>
 </header>

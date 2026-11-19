@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 
-@section('title', 'Asia Technical Training Center | BTEB Registered Training Organization #50821')
+@section('title', 'Asia Technical Training Center')
 @section('meta_description', 'Asia Technical Training Center (ATTC) is a premier BTEB registered vocational training institute in Mirpur-1, Dhaka offering certified short courses, RPL assessments, free govt training, and overseas job placement.')
 
 @section('content')
@@ -21,17 +21,17 @@
         <div class="max-w-4xl mx-auto space-y-6">
             
             <!-- Accreditation Badges -->
-            <!-- <div class="flex flex-wrap items-center justify-center gap-2.5">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+            <div class="flex flex-wrap items-center justify-center gap-2.5">
+                <!-- <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
                     <i class="fa-solid fa-certificate text-amber-400"></i> BTEB RTO Code: 50821
-                </span>
+                </span> -->
                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/20 text-cyan-300 border border-sky-500/30">
                     <i class="fa-solid fa-shield-halved text-cyan-400"></i> Govt. Recognized & BMET Partner
                 </span>
                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                    <i class="fa-solid fa-clock-rotate-left text-emerald-400"></i> Est. 1985 (39+ Years)
+                    <i class="fa-solid fa-clock-rotate-left text-emerald-400"></i> Est. 1985 (40+ Years)
                 </span>
-            </div> -->
+            </div>
 
             <!-- Main Heading (Centered Middle) -->
             <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.15] font-heading">
@@ -57,14 +57,14 @@
                    class="px-7 py-3.5 rounded-xl font-bold text-sm bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-xs transition flex items-center gap-2">
                     <i class="fa-solid fa-shapes text-cyan-300"></i> Explore Courses
                 </a>
-                <a href="{{ route('home.students') }}" 
+                <!-- <a href="{{ route('home.students') }}" 
                    class="px-6 py-3.5 rounded-xl font-bold text-sm bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 backdrop-blur-xs transition flex items-center gap-2">
                     <i class="fa-solid fa-award"></i> Verify Certificate
-                </a>
+                </a> -->
             </div>
 
             <!-- Key Figures: Equal Space Between -->
-            <div class="pt-8 border-t border-slate-700/60 flex justify-between items-center gap-4 max-w-3xl mx-auto">
+            <!-- <div class="pt-8 border-t border-slate-700/60 flex justify-between items-center gap-4 max-w-3xl mx-auto">
                 <div class="flex-1 text-center">
                     <p class="text-2xl sm:text-3xl font-black text-white font-heading">39+</p>
                     <p class="text-xs sm:text-sm text-slate-300 font-medium">Years of Legacy</p>
@@ -77,7 +77,7 @@
                     <p class="text-2xl sm:text-3xl font-black text-amber-400 font-heading">100%</p>
                     <p class="text-xs sm:text-sm text-slate-300 font-medium">Practical Training</p>
                 </div>
-            </div>
+            </div> -->
 
         </div>
     </div>
